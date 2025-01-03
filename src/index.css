@@ -1,5 +1,5 @@
 :root {
-  font-family: "EB Garamond", serif;
+  font-family: "Bodoni Moda", serif;
   line-height: 1.5;
   font-weight: 400;
   max-width: 100%;
@@ -22,6 +22,6 @@ body {
 }
 
 a {
-text-decoration: none;
-color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
