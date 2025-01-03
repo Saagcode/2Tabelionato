@@ -9,10 +9,10 @@
     box-shadow: 0px 0px 10px 1px rgb(0, 0, 0, 0.4);
 }
 
-.containerFooter span{
+.containerFooter span {
     padding: 0px;
-    margin: 0px 25px;
-    line-height: 1rem;
+    margin: 0px 0px;
+    line-height: 0.5rem;
 }
 
 .contentPhone h4 {
@@ -21,51 +21,61 @@
 }
 
 .contentPhone {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     align-items: center;
-    text-align: left;
+    margin: auto;
 }
 
-.fa-phone {
-    text-align: right;
+.contentPhone .fa-phone {
+    text-align: center;
     font-size: 2rem;
+    margin: 0 15px;
 }
 
 .contentEmail {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     align-items: center;
 }
 
-.fa-envelope {
-    text-align: right;
+.contentEmail .fa-envelope {
+    text-align: center;
     font-size: 2rem;
+    margin: 0 15px;
 }
 
 .contentTime {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     align-items: center;
 }
 
-.fa-clock {
-    text-align: right;
-    font-size: 2rem;
-}
-
-.contentMedia {
-    width: 100%;
+.contentTime .fa-clock {
     text-align: center;
+    font-size: 2rem;
+    margin: 0 15px;
 }
 
-.fa-instagram {
+.contentLocation {
+    display: flex;
+    align-items: center;
+}
+
+.contentLocation h4 {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    line-height: 1.7rem;
+}
+
+.contentLocation .fa-location-dot {
     font-size: 2rem;
+    text-align: center;
+    margin: 0 15px;
 }
 
 span h3 {
     font-size: 1rem;
 }
+
 span h4 {
     text-align: left;
     font-size: 0.9rem;

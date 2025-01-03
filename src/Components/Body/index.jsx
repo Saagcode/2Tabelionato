@@ -173,19 +173,24 @@ function Body() {
             )}
           </div>
         </section>
-        <div className="container_button_bottom">
+        <div className="container_button_knowmore">
           <button className="btn-service-bottom" onClick={handleOpenMenu}>
             SAIBA MAIS
           </button>
+        </div>
+        <div className="container_button_bottom">
           {openMenu ? (
             <>
-              <button className="btn-service-bottom">ESTRUTURA</button>
-              <button className="btn-talkUs-bottom">HISTORIA</button>
+              <button className="btn-service-bottom" data-aos="zoom-in-down"
+                data-aos-easing="linear"
+                data-aos-duration="500">ESTRUTURA</button>
+              <button className="btn-talkUs-bottom" data-aos="zoom-in-down"
+                data-aos-easing="linear"
+                data-aos-duration="500">HISTORIA</button>
             </>
           ) : (
-            <button style={{ opacity: "0%" }} onClick={handleOpenMenu}>
-              SAIBA MAIS
-            </button>
+            <>
+            </>
           )}
         </div>
       </div>
@@ -196,8 +201,9 @@ function Body() {
             <img src={mastercard} alt="mastercard" />
             <img src={elo} alt="elo" />
           </div>
-          <h3>Aceitamos pagamentos em cartão de crédito, débito e pix!</h3>
-          <span className="fa-brands fa-whatsapp" />
+          <div className="background-mainText">
+            <h3>Aceitamos pagamentos em cartão de crédito, débito e pix!</h3>
+          </div>
         </section>
       </div>
       <section className="body-service">

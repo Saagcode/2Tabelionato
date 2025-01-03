@@ -14,7 +14,7 @@
     font-size: 0.8rem;
 }
 
-.mailInfo h2{
+.mailInfo h2 {
     font-size: 0.8rem;
 }
 
@@ -26,13 +26,27 @@
     transition: 0.3s;
 }
 
-.phone:hover {
+.phone-1 {
+    transition: 0.3s;
+}
+
+.phone-2 {
+    transition: 0.3s;
+}
+
+.phone-1:hover {
     color: #ffffff91;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.mail:hover {
+.phone-2:hover {
+    color: #ffffff91;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mail span:hover {
     color: #ffffff91;
     cursor: pointer;
     transition: 0.3s;
@@ -47,10 +61,21 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    background-color: rgb(121, 85, 18);
+    background-color: rgb(121, 85, 18, 0.6);
     box-shadow: 0px 0px 10px 1px rgb(0, 0, 0, 0.4);
     padding: 20px;
     width: 100%;
+    animation: opt 1s ease forwards;
+}
+
+@keyframes opt {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
 
 .container {
@@ -62,7 +87,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    background-color: rgb(121, 85, 18);
+    background-color: rgba(121, 85, 18, 0.8);
     box-shadow: 0px 0px 10px 1px rgb(0, 0, 0, 0.4);
     padding: 20px;
     width: 100%;
@@ -76,6 +101,13 @@
     to {
         opacity: 100%;
     }
+}
+
+.container-images {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
 }
 
 ul li {
@@ -110,4 +142,72 @@ ul li:hover {
     justify-content: center;
     align-items: center;
     animation: opt 1s ease;
+}
+
+div .fa-instagram {
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+div .fa-instagram:hover {
+    color: #fff;
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+div .fa-whatsapp {
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+div .fa-whatsapp:hover {
+    color: #fff;
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+div .fa-envelope:hover {
+    color: #fff;
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+div .fa-envelope {
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+li .fa-whatsapp {
+    margin: 0 15px;
+    transition: 0.5s;
+}
+
+li .fa-whatsapp:hover {
+    color: #fff;
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+li .fa-envelope:hover {
+    color: #fff;
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+li .fa-envelope {
+    transition: 0.5s;
+}
+
+li .fa-instagram:hover {
+    color: #fff;
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+li .fa-instagram {
+    transition: 0.5s;
+    font-size: 2rem;
 }

@@ -110,7 +110,7 @@ h3 {
 }
 
 .bodyAboutUs {
-    height: 95vh;
+    height: 100vh;
     background-color: #fff;
     color: #1b2838e8;
     padding: 5px 0;
@@ -137,6 +137,12 @@ h3 {
     margin: 0px auto;
     padding: 20px 15px;
     background-color: #cecece36;
+    transition: 0.6s;
+}
+
+.subtitle-container-content:hover {
+    scale: 1.1;
+    transition: 0.6s;
 }
 
 .text-block {
@@ -176,13 +182,20 @@ h3 {
 }
 
 .container_button_bottom {
-    margin: 40px auto;
+    margin: 20px auto;
     width: 100%;
     padding: 10px;
 }
 
 .container_button_bottom button {
-    margin: 25px 30px;
+    margin: 0px 10px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 8%;
+}
+
+.container_button_knowmore button {
+    margin: 50px 0px 0 0;
     border-radius: 10px;
     padding: 15px;
     width: 8%;
@@ -221,7 +234,7 @@ h3 {
 }
 
 .backdrop-services {
-    height: 60vh;
+    height: 50vh;
     width: 100%;
     background-image: url('../../../public/images/setor1.png');
     background-repeat: no-repeat;
@@ -231,7 +244,7 @@ h3 {
 
 .body-services {
     background-color: #0000007e;
-    height: 60vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -256,6 +269,16 @@ h3 {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+.background-mainText {
+    background-color: #ffffff31;
+    width: 100%;
+}
+
+.background-mainText h3 {
+    color: #dbdbdb;
+    margin: 5px;
 }
 
 .container-cards img {

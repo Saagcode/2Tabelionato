@@ -43,8 +43,16 @@ function Footer() {
                         </h4>
                     </div>
                 </span>
-                <span className="contentMedia">
-                    <span className='fa-brands fa-instagram' />
+                <span className="contentLocation">
+                    <span className='fa-solid fa-location-dot' />
+                    <div>
+                        <h3>
+                            Endereço
+                        </h3>
+                        <h4>
+                            Rua Barão do Rio Branco, n.º 197 - sala 2, Zipperer Park (Shopping) 2° piso - Centro. CEP 89280-355 / São Bento do Sul - Santa Catarina
+                        </h4>
+                    </div>
                 </span>
             </div>
             <footer>
