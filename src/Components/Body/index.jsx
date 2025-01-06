@@ -1,12 +1,57 @@
 import "./styles.css";
 import "aos/dist/aos.css";
 import Aos from "aos";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import visa from "../../../public/images/visa.png";
 import mastercard from "../../../public/images/mastercard.png";
 import elo from "../../../public/images/elo.png";
+import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+import ServicesHomePage from "./ServicesHomePage";
 
 function Body() {
+  const [arrow, setArrow] = useState(false);
+  function handleGoUpArrow() {
+    const scrollY = window.scrollY;
+    if (scrollY > 100) {
+      setArrow(true);
+    } else {
+      setArrow(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleGoUpArrow);
+
+    // Remove o evento de scroll ao desmontar o componente
+    return () => {
+      window.removeEventListener("scroll", handleGoUpArrow);
+    };
+  }, []);
+
+  function handleTalkUsScroll() {
+    window.scrollTo({
+      top: 3810,
+      behavior: "smooth",
+    });
+  }
+
+  function handleServicesScroll() {
+    window.scrollTo({
+      top: 2580,
+      behavior: "smooth",
+    });
+  }
+
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: "AIzaSyDbe3U8LjGCVmad9QaUGQ6WH1ExIETI6l0",
+  });
+
+  const position = {
+    lat: -26.24872156019826,
+    lng: -49.379985427957706,
+  };
+
   const [turnSide, setTurnSide] = useState({
     missao: false,
     visao: false,
@@ -26,7 +71,18 @@ function Body() {
   return (
     <>
       <div className="backdrop">
-        <section className="body">
+        <section className="body" onScroll={handleGoUpArrow}>
+          {arrow && (
+            <span
+              className="fa-regular fa-square-caret-up"
+              onClick={() =>
+                window.scrollTo({
+                  top: 0, // Volta para o topo
+                  behavior: "smooth",
+                })
+              }
+            />
+          )}
           <h3 data-aos="fade-up" data-aos-duration="2000">
             SEJA BEM VINDO AO
           </h3>
@@ -41,8 +97,12 @@ function Body() {
             DE SÃO BENTO DO SUL
           </h1>
           <div className="container_button">
-            <button className="btn-service">NOSSOS SERVIÇOS</button>
-            <button className="btn-talkUs">FALE CONOSCO</button>
+            <button className="btn-service" onClick={handleServicesScroll}>
+              NOSSOS SERVIÇOS
+            </button>
+            <button className="btn-talkUs" onClick={handleTalkUsScroll}>
+              FALE CONOSCO
+            </button>
           </div>
           <div className="timeInfo">
             <span
@@ -181,16 +241,25 @@ function Body() {
         <div className="container_button_bottom">
           {openMenu ? (
             <>
-              <button className="btn-service-bottom" data-aos="zoom-in-down"
+              <button
+                className="btn-service-bottom"
+                data-aos="zoom-in-down"
                 data-aos-easing="linear"
-                data-aos-duration="500">ESTRUTURA</button>
-              <button className="btn-talkUs-bottom" data-aos="zoom-in-down"
+                data-aos-duration="500"
+              >
+                ESTRUTURA
+              </button>
+              <button
+                className="btn-talkUs-bottom"
+                data-aos="zoom-in-down"
                 data-aos-easing="linear"
-                data-aos-duration="500">HISTORIA</button>
+                data-aos-duration="500"
+              >
+                HISTORIA
+              </button>
             </>
           ) : (
-            <>
-            </>
+            <></>
           )}
         </div>
       </div>
@@ -206,9 +275,8 @@ function Body() {
           </div>
         </section>
       </div>
-      <section className="body-service">
-        <div></div>
-      </section>
+      <ServicesHomePage />
+      {/* Rodape e Fale conosco */}
       <section className="body-talkus">
         <div className="title-container">
           <h2>FALE CONOSCO</h2>
@@ -227,14 +295,20 @@ function Body() {
             <button>ENVIAR MENSAGEM</button>
           </div>
           <div className="container-location">
-            <div>
+            <div
+              style={{
+                display: `flex`,
+                justifyContent: `center`,
+                alignItems: `center`,
+                padding: `0 0 10px 0`,
+              }}
+            >
               <span className="fa-solid fa-map-location-dot" />
-            </div>
-            <div>
               <h3
                 style={{
-                  width: "50%",
-                  float: "left",
+                  width: "40%",
+                  margin: "0, auto",
+                  textAlign: "left",
                   fontSize: "1rem",
                   color: "black",
                   paddingLeft: "40px",
@@ -245,6 +319,22 @@ function Body() {
                 Santa Catarina
               </h3>
             </div>
+            {isLoaded ? (
+              <GoogleMap
+                mapContainerStyle={{
+                  width: "55%",
+                  height: `100%`,
+                  borderRadius: `10px`,
+                  border: `2px solid #cecece7b`,
+                }}
+                center={position}
+                zoom={15}
+              >
+                <Marker position={position} />
+              </GoogleMap>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </section>

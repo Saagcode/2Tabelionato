@@ -25,3 +25,20 @@ a {
   text-decoration: none;
   color: #fff;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Cor do fundo da barra */
+  border-radius: 10px; /* Bordas arredondadas no track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b2838e8; /* Cor do scroll */
+  border-radius: 10px; /* Bordas arredondadas no thumb */
+}
