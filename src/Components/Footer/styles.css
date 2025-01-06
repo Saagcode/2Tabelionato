@@ -23,7 +23,6 @@
 .contentPhone {
     display: flex;
     align-items: center;
-    margin: auto;
 }
 
 .contentPhone .fa-phone {
