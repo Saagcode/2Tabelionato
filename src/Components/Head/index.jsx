@@ -7,6 +7,7 @@ import logotabelionato from "../../../public/images/logotabelionato.png";
 import { useEffect, useState } from "react";
 
 function Head() {
+  const mailSend = 'atendimento@2tabelionatosbs.com.br'
   const [imageIndex, setImageIndex] = useState(0);
   const images = [logotabelionato, logo];
   function handleWindow() {
@@ -14,6 +15,14 @@ function Head() {
     const newIndex = Math.min(Math.floor(scrollY / 5), images.length - 1);
     setImageIndex(newIndex);
   }
+
+  function handleWhatsapp() {
+    const message = 'Olá, Gostaria de realizar um serviço notarial.'
+    const phone = '554788685377'
+    const url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url);
+  }
+
   useEffect(() => {
     window.addEventListener("scroll", handleWindow);
 
@@ -98,6 +107,7 @@ function Head() {
                   margin: "5px",
                   fontSize: "1rem",
                 }}
+                onClick={() => window.open('https://www.instagram.com/2tabelionatosbs/')}
               />
               <span
                 className="fa-brands fa-whatsapp"
@@ -108,6 +118,7 @@ function Head() {
                   borderRadius: "30px",
                   margin: "5px",
                 }}
+                onClick={() => handleWhatsapp()}
               />
               <span
                 className="fa-regular fa-envelope"
@@ -117,6 +128,7 @@ function Head() {
                   borderRadius: "30px",
                   margin: "5px",
                 }}
+                onClick={() => window.location.href = `mailto:${mailSend}`}
               />
             </div>
           )}
@@ -147,6 +159,7 @@ function Head() {
                     border: "2px solid white",
                     borderRadius: "30px",
                   }}
+                  onClick={() => window.open('https://www.instagram.com/2tabelionatosbs/')}
                 />
                 <span
                   className="fa-brands fa-whatsapp"
@@ -156,6 +169,7 @@ function Head() {
                     border: "2px solid white",
                     borderRadius: "30px",
                   }}
+                  onClick={() => handleWhatsapp()}
                 />
                 <span
                   className="fa-regular fa-envelope"
@@ -164,6 +178,7 @@ function Head() {
                     border: "2px solid white",
                     borderRadius: "30px",
                   }}
+                  onClick={() => window.location.href = `mailto:${mailSend}`}
                 />
               </li>
             ) : (
