@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import logo from "../../../public/images/logo.png";
-import logotabelionato from "../../../public/images/logotabelionato.png";
+import logotabelionato from "../../../public/images/Logotabelionato.png";
 import { useEffect, useState } from "react";
 
 function Head() {
