@@ -11,6 +11,7 @@ fieldset {
   width: 60%;
   margin: 0 auto;
   transition: 0.5s;
+  color: #1b2838e8;
 }
 
 fieldset:hover {
@@ -19,6 +20,7 @@ fieldset:hover {
   transition: 0.5s;
   background-color: #47474723;
 }
+
 div button {
   border-radius: 20px;
   padding: 10px;
@@ -38,7 +40,7 @@ div button {
 }
 
 .border-ServicesList {
-  border-bottom: 5px solid #fff;
+  border-bottom: 5px solid #1b2838e8;
   width: 5%;
   margin: 0 auto;
   border-radius: 15px;
@@ -92,7 +94,7 @@ div button {
   margin: 40px 20px;
   border-radius: 5px;
   border: 1px solid #cecece7b;
-  opacity: 50%;
+  opacity: 100%;
 }
 
 .background-side {

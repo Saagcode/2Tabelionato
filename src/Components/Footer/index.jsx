@@ -32,7 +32,7 @@ function Footer() {
           <div>
             <h3>Endereço</h3>
             <h4>
-              Rua Barão do Rio Branco, n.º 197 - sala 2, Zipperer Park
+              Rua Barão do Rio Branco, n.º 197 - sala 28, Zipperer Park
               (Shopping) 2° piso - Centro. CEP 89280-355 / São Bento do Sul -
               Santa Catarina
             </h4>

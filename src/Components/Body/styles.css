@@ -37,6 +37,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 100%;
   }
@@ -183,6 +184,7 @@ h3 {
   0% {
     opacity: 0%;
   }
+
   100% {
     opacity: 100%;
   }
@@ -304,6 +306,48 @@ h3 {
   padding: 8px;
   width: 100px;
   border-radius: 5px;
+}
+
+.sbsimg {
+  box-shadow: 0px 0 6px 4px rgba(0, 0, 0, 0.5);
+  background-image: url('../../../public/images/saobentodosul.png');
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.body-sbsimg {
+  background-color: #000000af;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-parkingSubtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parkingSubtitle {
+  width: 50%;
+  margin: 0;
+  text-align: left;
+  font-weight: 900;
+  font-Size: 3rem;
+}
+
+.container-parkingSubtitle .fa-square-parking {
+  display: flex;
+  font-size: 8rem;
+  margin: 0;
+  padding: 0 30px;
+  justify-content: right;
 }
 
 .body-service {

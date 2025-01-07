@@ -68,7 +68,7 @@ function Head() {
                 fontSize: `1rem`,
               }}
             >
-              Titular Karine Stier Vieira
+              Tabeliã Karine Stier Vieira
             </h2>
           </div>
           <div className="mailInfo">

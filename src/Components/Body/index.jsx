@@ -263,6 +263,21 @@ function Body() {
           )}
         </div>
       </div>
+      <div className="sbsimg">
+        <div className="body-sbsimg">
+          <h2 style={{fontWeight:'900', fontSize:'4rem', lineHeight:'0.5rem'}}>LOCALIZADO NO CENTRO</h2>
+          <div className="container-parkingSubtitle">
+            <span className="fa-solid fa-square-parking" />
+            <h1 className="parkingSubtitle">
+              ESTACIONAMENTO PRIVATIVO E GRATUITO
+            </h1>
+          </div>
+          <h3 style={{fontWeight:'900', fontSize:'2rem', lineHeight:'1rem'}}>
+            Anexo ao Zipperer Park (valide seu ticket na saida)
+          </h3>
+        </div>
+      </div>
+      <ServicesHomePage />
       <div className="backdrop-services">
         <section className="body-services">
           <div className="container-cards">
@@ -275,7 +290,6 @@ function Body() {
           </div>
         </section>
       </div>
-      <ServicesHomePage />
       {/* Rodape e Fale conosco */}
       <section className="body-talkus">
         <div className="title-container">
@@ -284,12 +298,13 @@ function Body() {
         </div>
         <div className="container-form-info">
           <div className="container-form">
+            <h4 style={{ color: '#1b2838e8', fontSize: '1.25rem' }}>PREENCHA O FORMULÁRIO ABAIXO PARA SER ATENDIDO</h4>
             <form action="">
-              <input type="text" placeholder="Nome" />
+              <input type="text" placeholder="Nome*" />
               <input type="text" placeholder="Email" />
-              <input type="text" placeholder="Telefone" />
-              <input type="text" placeholder="Assunto" />
-              <textarea name="" id="" placeholder="Mensagem" rows="13" />
+              <input type="text" placeholder="Telefone*" />
+              <input type="text" placeholder="Assunto*" />
+              <textarea name="" id="" placeholder="Mensagem*" rows="13" />
               <br />
             </form>
             <button>ENVIAR MENSAGEM</button>
@@ -314,7 +329,7 @@ function Body() {
                   paddingLeft: "40px",
                 }}
               >
-                Rua Barão do Rio Branco, n.º 197 - sala 2, Zipperer Park
+                Rua Barão do Rio Branco, n.º 197 - sala 28, Zipperer Park
                 (Shopping) 2° piso - Centro. CEP 89280-355 / São Bento do Sul -
                 Santa Catarina
               </h3>

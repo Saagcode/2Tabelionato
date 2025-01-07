@@ -16,16 +16,6 @@ function ServicesHomePage() {
       [index]: !prevState[index],
     }));
   }
-  const [button, setButton] = useState({
-    escritura: false,
-    executivo: false,
-  });
-  function handleButton(item) {
-    setButton((prevState) => ({
-      ...prevState,
-      [item]: !prevState[item],
-    }));
-  }
   Aos.init();
   return (
     <>
@@ -54,14 +44,6 @@ function ServicesHomePage() {
               libero. Voluptate praesentium inventore aliquam itaque rerum.
               Fugit, veniam eveniet! Hic dicta molestias laudantium.
             </h4>
-            {button.escritura ? (
-              <div data-aos="zoom-out-up">
-                <button className="btn-wpp">Advogados | Imobiliarias</button>
-                <button className="btn-wpp">Particulares</button>
-              </div>
-            ) : (
-              <></>
-            )}
           </fieldset>
         </div>
         <div>
@@ -75,20 +57,11 @@ function ServicesHomePage() {
               libero. Voluptate praesentium inventore aliquam itaque rerum.
               Fugit, veniam eveniet! Hic dicta molestias laudantium.
             </h4>
-            {button.executivo ? (
-              <div data-aos="zoom-out-up">
-                <button className="btn-wpp">
-                  Reconhecimento | Autenticação
-                </button>
-                <button className="btn-wpp">Procuração</button>
-              </div>
-            ) : (
-              <></>
-            )}
+
           </fieldset>
         </div>
       </section>
-      <h2>Nossos Serviços</h2>
+      <h2 style={{ color: '#1b2838e8' }}>Nossos Serviços</h2>
       <div className="border-ServicesList"></div>
       <section className="container_ServicesList">
         <div className="background-side">
