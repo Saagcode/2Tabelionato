@@ -5,6 +5,7 @@ import Aos from "aos";
 import logo from "../../../public/images/logo.png";
 import logotabelionato from "../../../public/images/Logotabelionato.png";
 import { useEffect, useState } from "react";
+import "../../media-queries/Head/media-queries.css";
 
 function Head() {
   const mailSend = 'atendimento@2tabelionatosbs.com.br'
@@ -39,14 +40,7 @@ function Head() {
         data-aos-easing="linear"
         data-aos-duration="500"
       >
-        <div
-          style={{
-            display: `grid`,
-            gridTemplateColumns: `repeat(3, 1fr)`,
-            margin: `0 auto`,
-            alignItems: `center`,
-          }}
-        >
+        <div className="containerTopTitle">
           <div className="contactInfo">
             <h2>
               <h2 className="phone">
@@ -97,7 +91,7 @@ function Head() {
           {imageIndex ? (
             <></>
           ) : (
-            <div>
+            <div className="container-brands">
               <span
                 className="fa-brands fa-instagram"
                 style={{
