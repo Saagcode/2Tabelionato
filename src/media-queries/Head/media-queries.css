@@ -1,0 +1,70 @@
+@media screen and (max-width: 900px) {
+  .topContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0;
+  }
+  .containerTopTitle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-brands {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .containerTopTitle .contactInfo {
+    margin: 10px auto;
+  }
+
+  .container_changed {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    top: 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  div .menuHomePage {
+    margin: 25px 0 0 0;
+  }
+  .menuHomePage ul {
+    padding: 0;
+  }
+  .menuHomePage ul li {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #cecece13;
+    width: 100%;
+  }
+  .logotipo-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}

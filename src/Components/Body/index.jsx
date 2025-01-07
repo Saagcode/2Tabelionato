@@ -7,6 +7,7 @@ import mastercard from "../../../public/images/mastercard.png";
 import elo from "../../../public/images/elo.png";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import ServicesHomePage from "./ServicesHomePage";
+import "../../media-queries/Body/media-queries.css";
 
 function Body() {
   const [arrow, setArrow] = useState(false);
