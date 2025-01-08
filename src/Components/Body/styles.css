@@ -310,7 +310,8 @@ h3 {
 }
 
 .sbsimg {
-  background-image: url('../../../public/images/saobentodosul.png');
+  box-shadow: 0px 0 7px 4px rgba(0, 0, 0, 0.6);
+  background-image: url("../../../public/images/saobentodosul.png");
   height: 80vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -339,7 +340,7 @@ h3 {
   margin: 0;
   text-align: left;
   font-weight: 900;
-  font-Size: 3rem;
+  font-size: 3rem;
 }
 
 .container-parkingSubtitle .fa-square-parking {

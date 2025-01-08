@@ -31,14 +31,14 @@ function Body() {
 
   function handleTalkUsScroll() {
     window.scrollTo({
-      top: 3810,
+      top: 4910,
       behavior: "smooth",
     });
   }
 
   function handleServicesScroll() {
     window.scrollTo({
-      top: 2580,
+      top: 3480,
       behavior: "smooth",
     });
   }
@@ -266,14 +266,32 @@ function Body() {
       </div>
       <div className="sbsimg">
         <div className="body-sbsimg">
-          <h2 style={{fontWeight:'900', fontSize:'4rem', lineHeight:'0.5rem'}}>LOCALIZADO NO CENTRO</h2>
-          <div className="container-parkingSubtitle">
+          <h2
+            style={{
+              fontWeight: "900",
+              fontSize: "4rem",
+              lineHeight: "0.5rem",
+            }}
+            data-aos="fade-in"
+            data-aos-duration="2500"
+          >
+            LOCALIZADO NO CENTRO
+          </h2>
+          <div
+            className="container-parkingSubtitle"
+            data-aos="fade-in"
+            data-aos-duration="1500"
+          >
             <span className="fa-solid fa-square-parking" />
             <h1 className="parkingSubtitle">
               ESTACIONAMENTO PRIVATIVO E GRATUITO
             </h1>
           </div>
-          <h3 style={{fontWeight:'900', fontSize:'2rem', lineHeight:'1rem'}}>
+          <h3
+            style={{ fontWeight: "900", fontSize: "2rem", lineHeight: "1rem" }}
+            data-aos="fade-in"
+            data-aos-duration="1500"
+          >
             Anexo ao Zipperer Park (valide seu ticket na saida)
           </h3>
         </div>
@@ -299,7 +317,9 @@ function Body() {
         </div>
         <div className="container-form-info">
           <div className="container-form">
-            <h4 style={{ color: '#1b2838e8', fontSize: '1.25rem' }}>PREENCHA O FORMULÁRIO ABAIXO PARA SER ATENDIDO</h4>
+            <h4 style={{ color: "#1b2838e8", fontSize: "1.25rem" }}>
+              PREENCHA O FORMULÁRIO ABAIXO PARA SER ATENDIDO
+            </h4>
             <form action="">
               <input type="text" placeholder="Nome*" />
               <input type="text" placeholder="Email" />
