@@ -1,0 +1,122 @@
+.container-top-img {
+    background-image: url('../../../public/images/faixada.png');
+    background-position: 70% 50%;
+    height: 40vh;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.body-servicos {
+    background-color: #000000af;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.500);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.body-servicos h3 {
+    font-size: 3rem;
+}
+
+.container-main-content {
+    list-style: disc;
+    color: #1b2838;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+    margin: 70px 0 0 0;
+}
+
+.menu-topics ul,
+h3 {
+    transition: 0.3s;
+    list-style: none;
+}
+
+.menu-topics li {
+    color: #ffffffa6;
+    transition: 0.3s;
+    cursor: pointer;
+    text-decoration: underline;
+    scale: 1;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-indent: 10px;
+    width: 60%;
+    padding: 10px;
+    background-color: #1b2838e8;
+    margin: 5px auto;
+    border: 1px solid #cecece7b;
+    border-radius: 10px;
+    list-style-type: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.menu-topics li:hover {
+    color: #fff;
+    transition: 0.3s;
+    scale: 1.1;
+}
+
+.container-options-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.container-options-buttons div {
+    margin: 0 10px;
+    color: #ffffffa6;
+    transition: 0.3s;
+    cursor: pointer;
+    text-decoration: underline;
+    width: 30%;
+    padding: 0px;
+    background-color: #1b2838e8;
+    border: 1px solid #cecece7b;
+    border-radius: 10px;
+}
+
+.container-options-buttons h3 {
+    font-size: 1rem;
+}
+
+.container-options-buttons div:hover {
+    color: #fff;
+    transition: 0.3s;
+    scale: 1.1;
+}
+
+.explanation {
+    margin: 0 0;
+}
+
+.explanation ul {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 0;
+}
+
+.explanation li {
+    font-size: 1rem;
+    margin: 20px auto;
+    width: 70%;
+    text-align: left;
+    list-style-type: square;
+}
+
+.container-documentation-procedure h3 {
+    font-size: 1rem;
+}
+
+.container-documentation-procedure .field-2 {
+    margin: 30px auto;
+}

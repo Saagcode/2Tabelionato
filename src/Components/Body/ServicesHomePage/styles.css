@@ -126,7 +126,7 @@ div button {
 }
 
 .menu-options {
-  color: #ffffffa6;
+  color: #1b2838e8;
   transition: 0.3s;
   cursor: pointer;
   text-decoration: underline;
@@ -137,15 +137,18 @@ div button {
   text-indent: 10px;
   width: 60%;
   padding: 10px;
-  background-color: #1b2838e8;
   margin: 5px 25px;
   border: 1px solid #cecece7b;
-  background-color: #47474723;
+  background-color: #ebebeb;
   border-radius: 10px;
   list-style-type: none;
   font-size: 0.9rem;
   transition: 0.3s;
   cursor: pointer;
+}
+
+.menu-options:hover {
+  color: #000 !important;
 }
 
 .menu-changed {

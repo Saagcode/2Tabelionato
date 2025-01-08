@@ -3,6 +3,7 @@ import { useState } from "react";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import mainDoor from "../../../../public/images/faixada-interna.png";
+import { Link } from 'react-router-dom'
 
 function ServicesHomePage() {
   const [openMenu, setOpenMenu] = useState({
@@ -178,10 +179,12 @@ function ServicesHomePage() {
               <span className="fa-solid fa-file-signature" />
               Procuração
             </li>
-            <li className="menu_without_options">
-              <span className="fa-solid fa-signature" />
-              Reconhecimento de firma
-            </li>
+            <Link to={'/servicos'} style={{ display: 'flex', justifyContent: 'right' }}>
+              <li className="menu_without_options">
+                <span className="fa-solid fa-signature" />
+                Reconhecimento de firma
+              </li>
+            </Link>
             <li className="menu_without_options">
               <span className="fa-solid fa-check-to-slot" />
               Autenticação de documentos
