@@ -3,6 +3,7 @@ import Footer from "../../Components/Footer";
 import Head from "../../Components/Head";
 import "./styles.css";
 import { Link } from "react-router-dom";
+import aberturaDeFirma from "./aberturaDeFirma";
 
 function servicos() {
   const [text, setText] = useState({

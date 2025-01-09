@@ -132,6 +132,8 @@ h3 {
 
 .container-documentation-procedure h3 {
   font-size: 1rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .container-documentation-procedure .field-2 {
