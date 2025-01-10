@@ -42,7 +42,7 @@ h3 {
   color: #ffffffa6;
   transition: 0.3s;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
   scale: 1;
   display: flex;
   text-align: center;
@@ -57,6 +57,12 @@ h3 {
   list-style-type: none;
   font-size: 0.9rem;
   cursor: pointer;
+}
+
+.border-li {
+  border: 2px solid #000000;
+  width: 90%;
+  margin: 2px auto;
 }
 
 .menu-topics .background-side-pageServices li {

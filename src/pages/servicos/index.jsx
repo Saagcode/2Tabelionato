@@ -3,7 +3,7 @@ import Footer from "../../Components/Footer";
 import Head from "../../Components/Head";
 import "./styles.css";
 import { Link } from "react-router-dom";
-import aberturaDeFirma from "./aberturaDeFirma";
+import { textosDeAberturaFirma } from "./aberturaDeFirma/index";
 
 function servicos() {
   const [text, setText] = useState({
@@ -40,12 +40,37 @@ function servicos() {
       whenNecessary: iteration === "whenNecessary",
     });
   }
+
+  //   funcoes
+
+  const [firma, setFirma] = useState({
+    abertura: false,
+  });
+  function handleFirma(item) {
+    setFirma({
+      abertura: item === "abertura",
+    });
+  }
   return (
     <>
       <Head />
       <div className="container-top-img">
         <div className="body-servicos">
-          <h3>ABERTURA E RECONHECIMENTO DE FIRMA</h3>
+          {firma.abertura ? (
+            <>
+              {textosDeAberturaFirma
+                .filter((topico) => topico.id === "title")
+                .map((topico, index) => (
+                  <div key={index}>
+                    <h3>{topico.titulo}</h3>
+                  </div>
+                ))}
+            </>
+          ) : (
+            <>
+              <h3>NOSSOS SERVIÇOS</h3>
+            </>
+          )}
         </div>
       </div>
       <div className="container-main-content">
@@ -112,6 +137,12 @@ function servicos() {
                           <span className="fa-solid fa-certificate" />{" "}
                           Confirmação de procuração
                         </li>
+                        <div
+                          className="border-li"
+                          data-aos="fade-in"
+                          data-aos-duration="2000"
+                          data-aos-offset="0"
+                        />
                       </>
                     ) : (
                       <></>
@@ -156,6 +187,12 @@ function servicos() {
                           <span className="fa-solid fa-file-contract" /> União
                           Estável | Dissolução
                         </li>
+                        <div
+                          className="border-li"
+                          data-aos="fade-in"
+                          data-aos-duration="2000"
+                          data-aos-offset="0"
+                        />
                         <li
                           className="menu-options"
                           data-aos="fade-down"
@@ -276,6 +313,12 @@ function servicos() {
                         >
                           <span className="fa-solid fa-lock" /> Atos Eletrônicos
                         </li>
+                        <div
+                          className="border-li"
+                          data-aos="fade-in"
+                          data-aos-duration="2000"
+                          data-aos-offset="0"
+                        />
                       </>
                     ) : (
                       <></>
@@ -288,7 +331,10 @@ function servicos() {
                       to={"/servicos"}
                       style={{ display: "flex", justifyContent: "right" }}
                     >
-                      <li className="menu_without_options">
+                      <li
+                        className="menu_without_options"
+                        onClick={() => handleFirma("abertura")}
+                      >
                         <span className="fa-solid fa-signature" />
                         Reconhecimento de firma
                       </li>
@@ -342,17 +388,28 @@ function servicos() {
           <ul>
             {text.howItWorks ? (
               <>
-                <h3>Como funciona?</h3>
-                <li>
-                  A pessoa interessada se dirige a um cartório com um documento
-                  de identidade (RG ou CNH) e realiza o seu registro de
-                  assinatura.
-                </li>
-                <li>
-                  O cartório verifica a autenticidade do documento apresentado e
-                  procede ao arquivamento da assinatura, tornando-a disponível
-                  para futura verificação.
-                </li>
+                {firma.abertura ? (
+                  <>
+                    {/* COMPONENTE VAI AQUI */}
+                    {textosDeAberturaFirma
+                      .filter((topico) => topico.id === "como-funciona")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <></>
+                    </li>
+                    <li>
+                      <></>
+                    </li>
+                  </>
+                )}
               </>
             ) : text.whatIsItFor ? (
               <>
@@ -383,18 +440,20 @@ function servicos() {
               </>
             ) : (
               <>
-                <h3>O que é?</h3>
-                <li>
-                  Abertura de firma é o ato de registrar a assinatura de uma
-                  pessoa em um cartório de registro de títulos e documentos ou
-                  de notas, no qual a pessoa comparece pessoalmente e assina uma
-                  ficha própria para que sua assinatura seja arquivada.
-                </li>
-                <li>
-                  Esse procedimento permite que, posteriormente, a assinatura
-                  registrada seja reconhecida como válida e autêntica em
-                  qualquer documento, quando necessário.
-                </li>
+                {firma.abertura ? (
+                  <>
+                    {textosDeAberturaFirma
+                      .filter((topico) => topico.id === "o-que-e")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : (
+                  <></>
+                )}
               </>
             )}
           </ul>
