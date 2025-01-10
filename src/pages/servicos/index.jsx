@@ -3,7 +3,9 @@ import Footer from "../../Components/Footer";
 import Head from "../../Components/Head";
 import "./styles.css";
 import { Link } from "react-router-dom";
-import aberturaDeFirma from "./aberturaDeFirma";
+import { textosDeAberturaFirma } from "./aberturaDeFirma/index";
+import { textoApresentacao } from "./apresentacao";
+import { textosDeApostilamento } from "./apostilamento";
 
 function servicos() {
   const [text, setText] = useState({
@@ -40,12 +42,49 @@ function servicos() {
       whenNecessary: iteration === "whenNecessary",
     });
   }
+
+  //   funcoes
+
+  const [action, setAction] = useState({
+    abertura: false,
+    apostilamento: false,
+  });
+  function handleTypeAction(item) {
+    setAction({
+      abertura: item === "abertura",
+      apostilamento: item === "apostilamento",
+    });
+  }
   return (
     <>
       <Head />
       <div className="container-top-img">
         <div className="body-servicos">
-          <h3>ABERTURA E RECONHECIMENTO DE FIRMA</h3>
+          {action.abertura ? (
+            <>
+              {textosDeAberturaFirma
+                .filter((topico) => topico.id === "title")
+                .map((topico, index) => (
+                  <div key={index}>
+                    <h3>{topico.titulo}</h3>
+                  </div>
+                ))}
+            </>
+          ) : action.apostilamento ? (
+            <>
+              {textosDeApostilamento
+                .filter((topico) => topico.id === "title")
+                .map((topico, index) => (
+                  <div key={index}>
+                    <h3>{topico.titulo}</h3>
+                  </div>
+                ))}
+            </>
+          ) : (
+            <>
+              <h3>NOSSOS SERVIÇOS</h3>
+            </>
+          )}
         </div>
       </div>
       <div className="container-main-content">
@@ -112,6 +151,12 @@ function servicos() {
                           <span className="fa-solid fa-certificate" />{" "}
                           Confirmação de procuração
                         </li>
+                        <div
+                          className="border-li"
+                          data-aos="fade-in"
+                          data-aos-duration="2000"
+                          data-aos-offset="0"
+                        />
                       </>
                     ) : (
                       <></>
@@ -156,6 +201,12 @@ function servicos() {
                           <span className="fa-solid fa-file-contract" /> União
                           Estável | Dissolução
                         </li>
+                        <div
+                          className="border-li"
+                          data-aos="fade-in"
+                          data-aos-duration="2000"
+                          data-aos-offset="0"
+                        />
                         <li
                           className="menu-options"
                           data-aos="fade-down"
@@ -228,6 +279,7 @@ function servicos() {
                       data-aos="fade-down"
                       data-aos-duration="500"
                       data-aos-offset="0"
+                      onClick={() => handleTypeAction("apostilamento")}
                     >
                       <span className="fa-solid fa-shield" />
                       Apostilamento
@@ -276,6 +328,12 @@ function servicos() {
                         >
                           <span className="fa-solid fa-lock" /> Atos Eletrônicos
                         </li>
+                        <div
+                          className="border-li"
+                          data-aos="fade-in"
+                          data-aos-duration="2000"
+                          data-aos-offset="0"
+                        />
                       </>
                     ) : (
                       <></>
@@ -288,7 +346,10 @@ function servicos() {
                       to={"/servicos"}
                       style={{ display: "flex", justifyContent: "right" }}
                     >
-                      <li className="menu_without_options">
+                      <li
+                        className="menu_without_options"
+                        onClick={() => handleTypeAction("abertura")}
+                      >
                         <span className="fa-solid fa-signature" />
                         Reconhecimento de firma
                       </li>
@@ -342,59 +403,135 @@ function servicos() {
           <ul>
             {text.howItWorks ? (
               <>
-                <h3>Como funciona?</h3>
-                <li>
-                  A pessoa interessada se dirige a um cartório com um documento
-                  de identidade (RG ou CNH) e realiza o seu registro de
-                  assinatura.
-                </li>
-                <li>
-                  O cartório verifica a autenticidade do documento apresentado e
-                  procede ao arquivamento da assinatura, tornando-a disponível
-                  para futura verificação.
-                </li>
+                {action.abertura ? (
+                  <>
+                    {/* COMPONENTE VAI AQUI */}
+                    {textosDeAberturaFirma
+                      .filter((topico) => topico.id === "como-funciona")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : action.apostilamento ? (
+                  <>
+                    {textosDeApostilamento
+                      .filter((topico) => topico.id === "como-funciona")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : (
+                  <></>
+                )}
               </>
             ) : text.whatIsItFor ? (
               <>
-                <h3>Para que serve?</h3>
-                <li>
-                  Validação de documentos: Quando um indivíduo assina um
-                  documento, como um contrato, o cartório pode confirmar que a
-                  assinatura é verdadeira.
-                </li>
-                <li>
-                  Autenticação de identidade: Confirma que a assinatura
-                  realmente pertence àquela pessoa. Segurança jurídica: Garante
-                  que a pessoa é quem diz ser e que sua assinatura é genuína.
-                </li>
+                {action.abertura ? (
+                  <>
+                    {/* COMPONENTE VAI AQUI */}
+                    {textosDeAberturaFirma
+                      .filter((topico) => topico.id === "para-que-serve")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : action.apostilamento ? (
+                  <>
+                    {textosDeApostilamento
+                      .filter((topico) => topico.id === "para-que-serve")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : (
+                  <></>
+                )}
               </>
             ) : text.whenNecessary ? (
               <>
-                <h3>Quando é necessário?</h3>
-                <li>
-                  Quando uma pessoa vai assinar um contrato ou outro tipo de
-                  documento importante e deseja garantir a autenticidade da
-                  assinatura.
-                </li>
-                <li>
-                  Em transações imobiliárias, financeiras e em diversas
-                  situações que exigem reconhecimento formal de documentos.
-                </li>
+                {action.abertura ? (
+                  <>
+                    {/* COMPONENTE VAI AQUI */}
+                    {textosDeAberturaFirma
+                      .filter((topico) => topico.id === "quando-e-necessario")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : action.apostilamento ? (
+                  <>
+                    {textosDeApostilamento
+                      .filter((topico) => topico.id === "quando-e-necessario")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : (
+                  <></>
+                )}
               </>
             ) : (
               <>
-                <h3>O que é?</h3>
-                <li>
-                  Abertura de firma é o ato de registrar a assinatura de uma
-                  pessoa em um cartório de registro de títulos e documentos ou
-                  de notas, no qual a pessoa comparece pessoalmente e assina uma
-                  ficha própria para que sua assinatura seja arquivada.
-                </li>
-                <li>
-                  Esse procedimento permite que, posteriormente, a assinatura
-                  registrada seja reconhecida como válida e autêntica em
-                  qualquer documento, quando necessário.
-                </li>
+                {action.abertura ? (
+                  <>
+                    {/* COMPONENTE VAI AQUI */}
+                    {textosDeAberturaFirma
+                      .filter((topico) => topico.id === "o-que-e")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : action.apostilamento ? (
+                  <>
+                    {textosDeApostilamento
+                      .filter((topico) => topico.id === "o-que-e")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : (
+                  <>
+                    {textoApresentacao.map((topico, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          margin: "0 auto",
+                          textAlign: "center",
+                          width: "100%",
+                          fontSize: "1.5rem",
+                        }}
+                      >
+                        <h4>{topico.conteudo}</h4>
+                      </div>
+                    ))}
+                  </>
+                )}
               </>
             )}
           </ul>
@@ -402,18 +539,61 @@ function servicos() {
         <div className="container-documentation-procedure">
           <fieldset className="field-1">
             <legend>DOCUMENTAÇÃO NECESSÁRIA</legend>
-            <h3>Documento de identificação (RG, CPF, CNH, passaporte).</h3>
-            <h3>
-              Documentos adicionais: O cartório pode solicitar comprovante de
-              residência ou outros documentos, dependendo do procedimento.
-            </h3>
-            <h3>Taxa:</h3>
+            {action.abertura ? (
+              <>
+                {/* COMPONENTE VAI AQUI */}
+                {textosDeAberturaFirma
+                  .filter((topico) => topico.id === "documentacao")
+                  .map((topico, index) => (
+                    <div key={index}>
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                    </div>
+                  ))}
+              </>
+            ) : action.apostilamento ? (
+              <>
+                {textosDeApostilamento
+                  .filter((topico) => topico.id === "documentacao")
+                  .map((topico, index) => (
+                    <div key={index}>
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                    </div>
+                  ))}
+              </>
+            ) : (
+              <></>
+            )}
           </fieldset>
           <fieldset className="field-2">
             <legend>PROCEDIMENTO</legend>
-            <h3>
-              Necessário comparecer ao cartório para registrar a assinatura.
-            </h3>
+            {action.abertura ? (
+              <>
+                {/* COMPONENTE VAI AQUI */}
+                {textosDeAberturaFirma
+                  .filter((topico) => topico.id === "procedimento")
+                  .map((topico, index) => (
+                    <div key={index}>
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                    </div>
+                  ))}
+              </>
+            ) : action.apostilamento ? (
+              <>
+                {textosDeApostilamento
+                  .filter((topico) => topico.id === "procedimento")
+                  .map((topico, index) => (
+                    <div key={index}>
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                    </div>
+                  ))}
+              </>
+            ) : (
+              <></>
+            )}
           </fieldset>
         </div>
       </div>
