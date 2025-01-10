@@ -1,13 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "../../Components/Footer";
 import Head from "../../Components/Head";
 import "./styles.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { textosDeAberturaFirma } from "./aberturaDeFirma/index";
 import { textoApresentacao } from "./apresentacao";
 import { textosDeApostilamento } from "./apostilamento";
 
 function servicos() {
+  const [arrow, setArrow] = useState(false);
+  function handleGoUpArrow() {
+    const scrollY = window.scrollY;
+    if (scrollY > 100) {
+      setArrow(true);
+    } else {
+      setArrow(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleGoUpArrow);
+
+    // Remove o evento de scroll ao desmontar o componente
+    return () => {
+      window.removeEventListener("scroll", handleGoUpArrow);
+    };
+  }, []);
+
+
+  const location = useLocation();
+  function handleTypeActionFromUrl() {
+    const queryParams = new URLSearchParams(location.search);
+    const section = queryParams.get("section");
+
+    // Atualiza o estado de acordo com o parâmetro 'aba' da URL
+    if (section === "aberturadefirma") {
+      setAction({ abertura: true });
+    } else if (section === "apostilamento") {
+      setAction({ apostilamento: true });
+    } else {
+      setAction({ abertura: false, apostilamento: false });
+    }
+  }
+
+  // Chama a função quando o componente é montado ou a URL muda
+  useEffect(() => {
+    handleTypeActionFromUrl();
+  }, [location]);
+
+
+
+  function handleScrollWindow() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+  useEffect(() => {
+    handleScrollWindow();
+  }, []);
   const [text, setText] = useState({
     howItWorks: false,
     whatIsItFor: false,
@@ -58,6 +109,17 @@ function servicos() {
   return (
     <>
       <Head />
+      {arrow && (
+        <span
+          className="fa-regular fa-square-caret-up"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
+        />
+      )}
       <div className="container-top-img">
         <div className="body-servicos">
           {action.abertura ? (
@@ -201,12 +263,6 @@ function servicos() {
                           <span className="fa-solid fa-file-contract" /> União
                           Estável | Dissolução
                         </li>
-                        <div
-                          className="border-li"
-                          data-aos="fade-in"
-                          data-aos-duration="2000"
-                          data-aos-offset="0"
-                        />
                         <li
                           className="menu-options"
                           data-aos="fade-down"
@@ -243,6 +299,12 @@ function servicos() {
                           <span className="fa-solid fa-file-contract" /> Divisão
                           amigável
                         </li>
+                        <div
+                          className="border-li"
+                          data-aos="fade-in"
+                          data-aos-duration="2000"
+                          data-aos-offset="0"
+                        />
                       </>
                     ) : (
                       <></>
@@ -274,16 +336,18 @@ function servicos() {
                       <span className="fa-solid fa-pen-clip" />
                       Divorcio Extrajudicial
                     </li>
-                    <li
-                      className="menu_without_options"
-                      data-aos="fade-down"
-                      data-aos-duration="500"
-                      data-aos-offset="0"
-                      onClick={() => handleTypeAction("apostilamento")}
-                    >
-                      <span className="fa-solid fa-shield" />
-                      Apostilamento
-                    </li>
+                    <Link to={{ search: '?section=apostilamento' }} style={{ display: 'flex', justifyContent: 'right' }}>
+                      <li
+                        className="menu_without_options"
+                        data-aos="fade-down"
+                        data-aos-duration="500"
+                        data-aos-offset="0"
+                        onClick={() => handleTypeAction("apostilamento")}
+                      >
+                        <span className="fa-solid fa-shield" />
+                        Apostilamento
+                      </li>
+                    </Link>
                     <li
                       className="menu_without_options"
                       data-aos="fade-down"
@@ -342,10 +406,7 @@ function servicos() {
                       <span className="fa-solid fa-file-signature" />
                       Procuração
                     </li>
-                    <Link
-                      to={"/servicos"}
-                      style={{ display: "flex", justifyContent: "right" }}
-                    >
+                    <Link to={{ search: '?section=aberturadefirma' }} style={{ display: 'flex', justifyContent: 'right' }}>
                       <li
                         className="menu_without_options"
                         onClick={() => handleTypeAction("abertura")}
@@ -354,6 +415,7 @@ function servicos() {
                         Reconhecimento de firma
                       </li>
                     </Link>
+
                     <li className="menu_without_options">
                       <span className="fa-solid fa-check-to-slot" />
                       Autenticação de documentos
@@ -510,6 +572,7 @@ function servicos() {
                         <div key={index}>
                           <h3>{topico.titulo}</h3>
                           <li>{topico.conteudo}</li>
+                          <li>{topico.conteudo1}</li>
                         </div>
                       ))}
                   </>
@@ -558,7 +621,13 @@ function servicos() {
                   .map((topico, index) => (
                     <div key={index}>
                       <h3>{topico.titulo}</h3>
-                      <li>{topico.conteudo}</li>
+                      <h4>{topico.conteudo1}</h4>
+                      <li>{topico.conteudo2}</li>
+                      <li>{topico.conteudo3}</li>
+                      <li>{topico.conteudo4}</li>
+                      <li>{topico.conteudo5}</li>
+                      <li>{topico.conteudo6}</li>
+                      <li>{topico.conteudo7}</li>
                     </div>
                   ))}
               </>
@@ -588,6 +657,8 @@ function servicos() {
                     <div key={index}>
                       <h3>{topico.titulo}</h3>
                       <li>{topico.conteudo}</li>
+                      <li>{topico.conteudo1}</li>
+                      <li>{topico.conteudo2}</li>
                     </div>
                   ))}
               </>

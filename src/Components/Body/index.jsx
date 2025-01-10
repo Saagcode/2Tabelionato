@@ -78,7 +78,7 @@ function Body() {
               className="fa-regular fa-square-caret-up"
               onClick={() =>
                 window.scrollTo({
-                  top: 0, // Volta para o topo
+                  top: 0, 
                   behavior: "smooth",
                 })
               }

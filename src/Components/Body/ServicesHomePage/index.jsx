@@ -145,10 +145,12 @@ function ServicesHomePage() {
               <span className="fa-solid fa-pen-clip" />
               Divorcio Extrajudicial
             </li>
-            <li className="menu_without_options">
-              <span className="fa-solid fa-shield" />
-              Apostilamento
-            </li>
+            <Link to={{ pathname: "/servicos", search: '?section=apostilamento' }} style={{ display: 'flex', justifyContent: 'right' }}>
+              <li className="menu_without_options">
+                <span className="fa-solid fa-shield" />
+                Apostilamento
+              </li>
+            </Link>
             <li className="menu_without_options">
               <span className="fa-solid fa-book" />
               Testamento
@@ -179,7 +181,7 @@ function ServicesHomePage() {
               <span className="fa-solid fa-file-signature" />
               Procuração
             </li>
-            <Link to={'/servicos'} style={{ display: 'flex', justifyContent: 'right' }}>
+            <Link to={{ pathname: "/servicos", search: '?section=aberturadefirma' }} style={{ display: 'flex', justifyContent: 'right' }}>
               <li className="menu_without_options">
                 <span className="fa-solid fa-signature" />
                 Reconhecimento de firma
@@ -192,7 +194,7 @@ function ServicesHomePage() {
           </ul>
           <img src={mainDoor} alt="faixada do cartorio" className="mainDoor" />
         </div>
-      </section>
+      </section >
     </>
   );
 }

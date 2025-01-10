@@ -144,6 +144,11 @@ h3 {
 
 .container-documentation-procedure .field-2 {
   margin: 30px auto;
+  text-align: left;
+}
+
+.container-documentation-procedure .field-1 {
+  text-align: left;
 }
 
 .border-top {
