@@ -4,6 +4,8 @@ import Head from "../../Components/Head";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import { textosDeAberturaFirma } from "./aberturaDeFirma/index";
+import { textoApresentacao } from "./apresentacao";
+import { textosDeApostilamento } from "./apostilamento";
 
 function servicos() {
   const [text, setText] = useState({
@@ -43,12 +45,14 @@ function servicos() {
 
   //   funcoes
 
-  const [firma, setFirma] = useState({
+  const [action, setAction] = useState({
     abertura: false,
+    apostilamento: false,
   });
-  function handleFirma(item) {
-    setFirma({
+  function handleTypeAction(item) {
+    setAction({
       abertura: item === "abertura",
+      apostilamento: item === "apostilamento",
     });
   }
   return (
@@ -56,9 +60,19 @@ function servicos() {
       <Head />
       <div className="container-top-img">
         <div className="body-servicos">
-          {firma.abertura ? (
+          {action.abertura ? (
             <>
               {textosDeAberturaFirma
+                .filter((topico) => topico.id === "title")
+                .map((topico, index) => (
+                  <div key={index}>
+                    <h3>{topico.titulo}</h3>
+                  </div>
+                ))}
+            </>
+          ) : action.apostilamento ? (
+            <>
+              {textosDeApostilamento
                 .filter((topico) => topico.id === "title")
                 .map((topico, index) => (
                   <div key={index}>
@@ -265,6 +279,7 @@ function servicos() {
                       data-aos="fade-down"
                       data-aos-duration="500"
                       data-aos-offset="0"
+                      onClick={() => handleTypeAction("apostilamento")}
                     >
                       <span className="fa-solid fa-shield" />
                       Apostilamento
@@ -333,7 +348,7 @@ function servicos() {
                     >
                       <li
                         className="menu_without_options"
-                        onClick={() => handleFirma("abertura")}
+                        onClick={() => handleTypeAction("abertura")}
                       >
                         <span className="fa-solid fa-signature" />
                         Reconhecimento de firma
@@ -388,7 +403,7 @@ function servicos() {
           <ul>
             {text.howItWorks ? (
               <>
-                {firma.abertura ? (
+                {action.abertura ? (
                   <>
                     {/* COMPONENTE VAI AQUI */}
                     {textosDeAberturaFirma
@@ -400,50 +415,10 @@ function servicos() {
                         </div>
                       ))}
                   </>
-                ) : (
+                ) : action.apostilamento ? (
                   <>
-                    <li>
-                      <></>
-                    </li>
-                    <li>
-                      <></>
-                    </li>
-                  </>
-                )}
-              </>
-            ) : text.whatIsItFor ? (
-              <>
-                <h3>Para que serve?</h3>
-                <li>
-                  Validação de documentos: Quando um indivíduo assina um
-                  documento, como um contrato, o cartório pode confirmar que a
-                  assinatura é verdadeira.
-                </li>
-                <li>
-                  Autenticação de identidade: Confirma que a assinatura
-                  realmente pertence àquela pessoa. Segurança jurídica: Garante
-                  que a pessoa é quem diz ser e que sua assinatura é genuína.
-                </li>
-              </>
-            ) : text.whenNecessary ? (
-              <>
-                <h3>Quando é necessário?</h3>
-                <li>
-                  Quando uma pessoa vai assinar um contrato ou outro tipo de
-                  documento importante e deseja garantir a autenticidade da
-                  assinatura.
-                </li>
-                <li>
-                  Em transações imobiliárias, financeiras e em diversas
-                  situações que exigem reconhecimento formal de documentos.
-                </li>
-              </>
-            ) : (
-              <>
-                {firma.abertura ? (
-                  <>
-                    {textosDeAberturaFirma
-                      .filter((topico) => topico.id === "o-que-e")
+                    {textosDeApostilamento
+                      .filter((topico) => topico.id === "como-funciona")
                       .map((topico, index) => (
                         <div key={index}>
                           <h3>{topico.titulo}</h3>
@@ -455,24 +430,170 @@ function servicos() {
                   <></>
                 )}
               </>
+            ) : text.whatIsItFor ? (
+              <>
+                {action.abertura ? (
+                  <>
+                    {/* COMPONENTE VAI AQUI */}
+                    {textosDeAberturaFirma
+                      .filter((topico) => topico.id === "para-que-serve")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : action.apostilamento ? (
+                  <>
+                    {textosDeApostilamento
+                      .filter((topico) => topico.id === "para-que-serve")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            ) : text.whenNecessary ? (
+              <>
+                {action.abertura ? (
+                  <>
+                    {/* COMPONENTE VAI AQUI */}
+                    {textosDeAberturaFirma
+                      .filter((topico) => topico.id === "quando-e-necessario")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : action.apostilamento ? (
+                  <>
+                    {textosDeApostilamento
+                      .filter((topico) => topico.id === "quando-e-necessario")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            ) : (
+              <>
+                {action.abertura ? (
+                  <>
+                    {/* COMPONENTE VAI AQUI */}
+                    {textosDeAberturaFirma
+                      .filter((topico) => topico.id === "o-que-e")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : action.apostilamento ? (
+                  <>
+                    {textosDeApostilamento
+                      .filter((topico) => topico.id === "o-que-e")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : (
+                  <>
+                    {textoApresentacao.map((topico, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          margin: "0 auto",
+                          textAlign: "center",
+                          width: "100%",
+                          fontSize: "1.5rem",
+                        }}
+                      >
+                        <h4>{topico.conteudo}</h4>
+                      </div>
+                    ))}
+                  </>
+                )}
+              </>
             )}
           </ul>
         </div>
         <div className="container-documentation-procedure">
           <fieldset className="field-1">
             <legend>DOCUMENTAÇÃO NECESSÁRIA</legend>
-            <h3>Documento de identificação (RG, CPF, CNH, passaporte).</h3>
-            <h3>
-              Documentos adicionais: O cartório pode solicitar comprovante de
-              residência ou outros documentos, dependendo do procedimento.
-            </h3>
-            <h3>Taxa:</h3>
+            {action.abertura ? (
+              <>
+                {/* COMPONENTE VAI AQUI */}
+                {textosDeAberturaFirma
+                  .filter((topico) => topico.id === "documentacao")
+                  .map((topico, index) => (
+                    <div key={index}>
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                    </div>
+                  ))}
+              </>
+            ) : action.apostilamento ? (
+              <>
+                {textosDeApostilamento
+                  .filter((topico) => topico.id === "documentacao")
+                  .map((topico, index) => (
+                    <div key={index}>
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                    </div>
+                  ))}
+              </>
+            ) : (
+              <></>
+            )}
           </fieldset>
           <fieldset className="field-2">
             <legend>PROCEDIMENTO</legend>
-            <h3>
-              Necessário comparecer ao cartório para registrar a assinatura.
-            </h3>
+            {action.abertura ? (
+              <>
+                {/* COMPONENTE VAI AQUI */}
+                {textosDeAberturaFirma
+                  .filter((topico) => topico.id === "procedimento")
+                  .map((topico, index) => (
+                    <div key={index}>
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                    </div>
+                  ))}
+              </>
+            ) : action.apostilamento ? (
+              <>
+                {textosDeApostilamento
+                  .filter((topico) => topico.id === "procedimento")
+                  .map((topico, index) => (
+                    <div key={index}>
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                    </div>
+                  ))}
+              </>
+            ) : (
+              <></>
+            )}
           </fieldset>
         </div>
       </div>

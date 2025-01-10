@@ -32,4 +32,27 @@ export const textosDeAberturaFirma = [
       tornando-a disponível para futura verificação.
     `,
   },
+  {
+    id: "quando-e-necessario",
+    titulo: "Quando é necessário?",
+    conteudo: `
+       Quando uma pessoa vai assinar um contrato ou outro tipo de
+       documento importante e deseja garantir a autenticidade da
+       assinatura.
+       Em transações imobiliárias, financeiras e em diversas
+       situações que exigem reconhecimento formal de documentos.
+    `,
+  },
+  {
+    id: `documentacao`,
+    conteudo: ` 
+    Documento de identificação (RG, CPF, CNH, passaporte). Documentos
+    adicionais: O cartório pode solicitar comprovante de residência ou
+    outros documentos, dependendo do procedimento.`,
+    taxa: `Taxa:`,
+  },
+  {
+    id: `procedimento`,
+    conteudo: `Necessário comparecer ao cartório para registrar a assinatura.`,
+  },
 ];
