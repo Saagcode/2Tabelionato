@@ -3,7 +3,7 @@ import { useState } from "react";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import mainDoor from "../../../../public/images/faixada-interna.png";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function ServicesHomePage() {
   const [openMenu, setOpenMenu] = useState({
@@ -58,11 +58,10 @@ function ServicesHomePage() {
               libero. Voluptate praesentium inventore aliquam itaque rerum.
               Fugit, veniam eveniet! Hic dicta molestias laudantium.
             </h4>
-
           </fieldset>
         </div>
       </section>
-      <h2 style={{ color: '#1b2838e8' }}>Nossos Serviços</h2>
+      <h2 style={{ color: "#1b2838e8" }}>Nossos Serviços</h2>
       <div className="border-ServicesList"></div>
       <section className="container_ServicesList">
         <div className="background-side">
@@ -75,22 +74,70 @@ function ServicesHomePage() {
             </li>
             {openMenu.menuCertidoes ? (
               <>
-                <li className="menu-options" data-aos="fade-down">
-                  <span className="fa-solid fa-certificate" /> Certidão de
-                  escritura
-                </li>
-                <li className="menu-options" data-aos="fade-down">
-                  <span className="fa-solid fa-certificate" /> Certidão de
-                  procuração
-                </li>
-                <li className="menu-options" data-aos="fade-down">
-                  <span className="fa-solid fa-certificate" /> Certidão de
-                  substabelecimento
-                </li>
-                <li className="menu-options" data-aos="fade-down">
-                  <span className="fa-solid fa-certificate" /> Confirmação de
-                  procuração
-                </li>
+                <Link
+                  to={{
+                    pathname: "/servicos",
+                    search: "?section=certidaoEscritura",
+                  }}
+                  style={{ display: "flex", justifyContent: "right" }}
+                >
+                  <li
+                    className="menu-options"
+                    data-aos="fade-down"
+                    data-aos-offset="-1000"
+                  >
+                    <span className="fa-solid fa-certificate" /> Certidão de
+                    escritura
+                  </li>
+                </Link>
+                <Link
+                  to={{
+                    pathname: "/servicos",
+                    search: "?section=certidaoProcuracao",
+                  }}
+                  style={{ display: "flex", justifyContent: "right" }}
+                >
+                  <li
+                    className="menu-options"
+                    data-aos="fade-down"
+                    data-aos-offset="-1000"
+                  >
+                    <span className="fa-solid fa-certificate" /> Certidão de
+                    procuração
+                  </li>
+                </Link>
+                <Link
+                  to={{
+                    pathname: "/servicos",
+                    search: "?section=certidaoSubstabelecimento",
+                  }}
+                  style={{ display: "flex", justifyContent: "right" }}
+                >
+                  <li
+                    className="menu-options"
+                    data-aos="fade-down"
+                    data-aos-offset="-1000"
+                  >
+                    <span className="fa-solid fa-certificate" /> Certidão de
+                    substabelecimento
+                  </li>
+                </Link>
+                <Link
+                  to={{
+                    pathname: "/servicos",
+                    search: "?section=confirmacaoProcuracao",
+                  }}
+                  style={{ display: "flex", justifyContent: "right" }}
+                >
+                  <li
+                    className="menu-options"
+                    data-aos="fade-down"
+                    data-aos-offset="-1000"
+                  >
+                    <span className="fa-solid fa-certificate" /> Confirmação de
+                    procuração
+                  </li>
+                </Link>
               </>
             ) : (
               <></>
@@ -104,28 +151,56 @@ function ServicesHomePage() {
             </li>
             {openMenu.menuEscritura ? (
               <>
-                <li className="menu-options" data-aos="fade-down">
+                <li
+                  className="menu-options"
+                  data-aos="fade-down"
+                  data-aos-offset="-1000"
+                >
                   <span className="fa-solid fa-file-contract" /> Compra e venda
                 </li>
-                <li className="menu-options" data-aos="fade-down">
+                <li
+                  className="menu-options"
+                  data-aos="fade-down"
+                  data-aos-offset="-1000"
+                >
                   <span className="fa-solid fa-file-contract" /> Permuta
                 </li>
-                <li className="menu-options" data-aos="fade-down">
+                <li
+                  className="menu-options"
+                  data-aos="fade-down"
+                  data-aos-offset="-1000"
+                >
                   <span className="fa-solid fa-file-contract" /> União Estável |
                   Dissolução
                 </li>
-                <li className="menu-options" data-aos="fade-down">
+                <li
+                  className="menu-options"
+                  data-aos="fade-down"
+                  data-aos-offset="-1000"
+                >
                   <span className="fa-solid fa-file-contract" /> Estremação
                 </li>
-                <li className="menu-options" data-aos="fade-down">
+                <li
+                  className="menu-options"
+                  data-aos="fade-down"
+                  data-aos-offset="-1000"
+                >
                   <span className="fa-solid fa-file-contract" /> Extinção de
                   Condomínio
                 </li>
-                <li className="menu-options" data-aos="fade-down">
+                <li
+                  className="menu-options"
+                  data-aos="fade-down"
+                  data-aos-offset="-1000"
+                >
                   <span className="fa-solid fa-file-contract" /> Servidão de
                   passagem
                 </li>
-                <li className="menu-options" data-aos="fade-down">
+                <li
+                  className="menu-options"
+                  data-aos="fade-down"
+                  data-aos-offset="-1000"
+                >
                   <span className="fa-solid fa-file-contract" /> Divisão
                   amigável
                 </li>
@@ -133,28 +208,60 @@ function ServicesHomePage() {
             ) : (
               <></>
             )}
-            <li className="menu_without_options">
-              <span className="fa-solid fa-right-left" />
-              Inventario e Partilha
-            </li>
-            <li className="menu_without_options">
-              <span className="fa-solid fa-copy" />
-              Ata Notarial
-            </li>
-            <li className="menu_without_options">
-              <span className="fa-solid fa-pen-clip" />
-              Divorcio Extrajudicial
-            </li>
-            <Link to={{ pathname: "/servicos", search: '?section=apostilamento' }} style={{ display: 'flex', justifyContent: 'right' }}>
+            <Link
+              to={{
+                pathname: "/servicos",
+                search: "?section=inventarioPartilha",
+              }}
+              style={{ display: "flex", justifyContent: "right" }}
+            >
+              <li className="menu_without_options">
+                <span className="fa-solid fa-right-left" />
+                Inventario e Partilha
+              </li>
+            </Link>
+            <Link
+              to={{
+                pathname: "/servicos",
+                search: "?section=ataNotarial",
+              }}
+              style={{ display: "flex", justifyContent: "right" }}
+            >
+              <li className="menu_without_options">
+                <span className="fa-solid fa-copy" />
+                Ata Notarial
+              </li>
+            </Link>
+            <Link
+              to={{
+                pathname: "/servicos",
+                search: "?section=divorcioExtrajudicial",
+              }}
+              style={{ display: "flex", justifyContent: "right" }}
+            >
+              <li className="menu_without_options">
+                <span className="fa-solid fa-pen-clip" />
+                Divorcio Extrajudicial
+              </li>
+            </Link>
+            <Link
+              to={{ pathname: "/servicos", search: "?section=apostilamento" }}
+              style={{ display: "flex", justifyContent: "right" }}
+            >
               <li className="menu_without_options">
                 <span className="fa-solid fa-shield" />
                 Apostilamento
               </li>
             </Link>
-            <li className="menu_without_options">
-              <span className="fa-solid fa-book" />
-              Testamento
-            </li>
+            <Link
+              to={{ pathname: "/servicos", search: "?section=testamento" }}
+              style={{ display: "flex", justifyContent: "right" }}
+            >
+              <li className="menu_without_options">
+                <span className="fa-solid fa-book" />
+                Testamento
+              </li>
+            </Link>
             <li
               className={openMenu.menuDigital ? "menu-changed" : "menu"}
               onClick={() => handleOpenMenu("menuDigital")}
@@ -164,37 +271,100 @@ function ServicesHomePage() {
             </li>
             {openMenu.menuDigital ? (
               <>
-                <li className="menu-options" data-aos="fade-down">
-                  <span className="fa-solid fa-lock" /> Certificado digital
-                </li>
-                <li className="menu-options" data-aos="fade-down">
-                  <span className="fa-solid fa-lock" /> Assinatura digital
-                </li>
-                <li className="menu-options" data-aos="fade-down">
-                  <span className="fa-solid fa-lock" /> Atos Eletrônicos
-                </li>
+                <Link
+                  onClick={() =>
+                    window.open("https://cadastro.e-notariado.org.br/")
+                  }
+                  to={{
+                    pathname: "/servicos",
+                    search: "?section=atosDigitais",
+                  }}
+                  style={{ display: "flex", justifyContent: "right" }}
+                >
+                  <li
+                    className="menu-options"
+                    data-aos="fade-down"
+                    data-aos-offset="-1000"
+                  >
+                    <span className="fa-solid fa-lock" /> Certificado digital
+                  </li>
+                </Link>
+                <Link
+                  onClick={() =>
+                    window.open(
+                      "https://www.e-notariado.org.br/notary/assinatura"
+                    )
+                  }
+                  style={{ display: "flex", justifyContent: "right" }}
+                  to={{
+                    pathname: "/servicos",
+                    search: "?section=atosDigitais",
+                  }}
+                >
+                  <li
+                    className="menu-options"
+                    data-aos="fade-down"
+                    data-aos-offset="-1000"
+                  >
+                    <span className="fa-solid fa-lock" /> Assinatura digital
+                  </li>
+                </Link>
+                <Link
+                  onClick={() =>
+                    window.open("https://www.e-notariado.org.br/notary")
+                  }
+                  style={{ display: "flex", justifyContent: "right" }}
+                  to={{
+                    pathname: "/servicos",
+                    search: "?section=atosDigitais",
+                  }}
+                >
+                  <li
+                    className="menu-options"
+                    data-aos="fade-down"
+                    data-aos-offset="-1000"
+                  >
+                    <span className="fa-solid fa-lock" /> Atos Eletrônicos
+                  </li>
+                </Link>
               </>
             ) : (
               <></>
             )}
-            <li className="menu_without_options">
-              <span className="fa-solid fa-file-signature" />
-              Procuração
-            </li>
-            <Link to={{ pathname: "/servicos", search: '?section=aberturadefirma' }} style={{ display: 'flex', justifyContent: 'right' }}>
+            <Link
+              to={{ pathname: "/servicos", search: "?section=procuracao" }}
+              style={{ display: "flex", justifyContent: "right" }}
+            >
+              <li className="menu_without_options">
+                <span className="fa-solid fa-file-signature" />
+                Procuração
+              </li>
+            </Link>
+            <Link
+              to={{ pathname: "/servicos", search: "?section=aberturadefirma" }}
+              style={{ display: "flex", justifyContent: "right" }}
+            >
               <li className="menu_without_options">
                 <span className="fa-solid fa-signature" />
                 Reconhecimento de firma
               </li>
             </Link>
-            <li className="menu_without_options">
-              <span className="fa-solid fa-check-to-slot" />
-              Autenticação de documentos
-            </li>
+            <Link
+              to={{
+                pathname: "/servicos",
+                search: "?section=autenticacao",
+              }}
+              style={{ display: "flex", justifyContent: "right" }}
+            >
+              <li className="menu_without_options">
+                <span className="fa-solid fa-check-to-slot" />
+                Autenticação de documentos
+              </li>
+            </Link>
           </ul>
           <img src={mainDoor} alt="faixada do cartorio" className="mainDoor" />
         </div>
-      </section >
+      </section>
     </>
   );
 }
