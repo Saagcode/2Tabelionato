@@ -18,6 +18,7 @@ import { textosDeTestamento } from "./testamento";
 import { textosDeProcuracao } from "./procuracao";
 import { textosDeAutenticacao } from "./autenticacaoDeDocumentos";
 import { textoAtosDigitais } from "./atosDigitais";
+import { textosDeEscrituraCompraVenda } from "./escrituras/compraVenda";
 
 function servicos() {
   const [arrow, setArrow] = useState(false);
@@ -71,6 +72,8 @@ function servicos() {
       setAction({ autenticacao: true });
     } else if (section === "atosDigitais") {
       setAction({ atosDigitais: true });
+    } else if (section === "escrituraCompraVenda") {
+      setAction({ escrituraCompraVenda: true });
     } else {
       setAction({
         abertura: false,
@@ -85,6 +88,7 @@ function servicos() {
         procuracao: false,
         autenticacao: false,
         atosDigitais: false,
+        escrituraCompraVenda: false,
       });
     }
   }
@@ -154,6 +158,7 @@ function servicos() {
     procuracao: false,
     autenticacao: false,
     atosDigitais: false,
+    escrituraCompraVenda: false,
   });
   function handleTypeAction(item) {
     setAction({
@@ -170,6 +175,7 @@ function servicos() {
       procuracao: item === "procuracao",
       autenticacao: item === "autenticacao",
       atosDigitais: item === "atosDigitais",
+      escrituraCompraVenda: item === "escrituraCompraVenda",
     });
   }
   return (
@@ -318,6 +324,16 @@ function servicos() {
                   </div>
                 ))}
             </>
+          ) : action.escrituraCompraVenda ? (
+            <>
+              {textosDeEscrituraCompraVenda
+                .filter((topico) => topico.id === "title")
+                .map((topico, index) => (
+                  <div key={index}>
+                    <h3>{topico.titulo}</h3>
+                  </div>
+                ))}
+            </>
           ) : (
             <>
               <h3>NOSSOS SERVIÇOS</h3>
@@ -429,15 +445,20 @@ function servicos() {
                     </li>
                     {openMenu.menuEscritura ? (
                       <>
-                        <li
-                          className="menu-options"
-                          data-aos="fade-down"
-                          data-aos-duration="500"
-                          data-aos-offset="-1000"
+                        <Link
+                          to={{ search: "?section=EscrituraCompraVenda" }}
+                          style={{ display: "flex", justifyContent: "right" }}
                         >
-                          <span className="fa-solid fa-file-contract" /> Compra
-                          e venda
-                        </li>
+                          <li
+                            className="menu-options"
+                            data-aos="fade-down"
+                            data-aos-duration="500"
+                            data-aos-offset="-1000"
+                          >
+                            <span className="fa-solid fa-file-contract" />{" "}
+                            Compra e venda
+                          </li>
+                        </Link>
                         <li
                           className="menu-options"
                           data-aos="fade-down"
@@ -896,6 +917,20 @@ function servicos() {
                         </div>
                       ))}
                   </>
+                ) : action.escrituraCompraVenda ? (
+                  <>
+                    {textosDeEscrituraCompraVenda
+                      .filter((topico) => topico.id === "como-funciona")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                          <li>{topico.conteudo1}</li>
+                          <li>{topico.conteudo2}</li>
+                          <li>{topico.conteudo3}</li>
+                        </div>
+                      ))}
+                  </>
                 ) : (
                   <></>
                 )}
@@ -1072,6 +1107,19 @@ function servicos() {
                         </div>
                       ))}
                   </>
+                ) : action.escrituraCompraVenda ? (
+                  <>
+                    {textosDeEscrituraCompraVenda
+                      .filter((topico) => topico.id === "para-que-serve")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                          <li>{topico.conteudo1}</li>
+                          <li>{topico.conteudo2}</li>
+                        </div>
+                      ))}
+                  </>
                 ) : (
                   <></>
                 )}
@@ -1244,6 +1292,18 @@ function servicos() {
                           <li>{topico.conteudo1}</li>
                           <li>{topico.conteudo2}</li>
                           <li>{topico.conteudo3}</li>
+                        </div>
+                      ))}
+                  </>
+                ) : action.escrituraCompraVenda ? (
+                  <>
+                    {textosDeEscrituraCompraVenda
+                      .filter((topico) => topico.id === "quando-e-necessario")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li>{topico.conteudo}</li>
+                          <li>{topico.conteudo1}</li>
                         </div>
                       ))}
                   </>
@@ -1461,6 +1521,22 @@ function servicos() {
                           </li>
                           <li data-aos="fade-right" data-aos-duration="2000">
                             {topico.conteudo2}
+                          </li>
+                        </div>
+                      ))}
+                  </>
+                ) : action.escrituraCompraVenda ? (
+                  <>
+                    {textosDeEscrituraCompraVenda
+                      .filter((topico) => topico.id === "o-que-e")
+                      .map((topico, index) => (
+                        <div key={index}>
+                          <h3>{topico.titulo}</h3>
+                          <li data-aos="fade-right" data-aos-duration="2000">
+                            {topico.conteudo}
+                          </li>
+                          <li data-aos="fade-right" data-aos-duration="2000">
+                            {topico.conteudo1}
                           </li>
                         </div>
                       ))}
@@ -1721,6 +1797,24 @@ function servicos() {
                     </div>
                   ))}
               </>
+            ) : action.escrituraCompraVenda ? (
+              <>
+                {textosDeEscrituraCompraVenda
+                  .filter((topico) => topico.id === "documentacao")
+                  .map((topico, index) => (
+                    <div
+                      key={index}
+                      data-aos="zoom-in"
+                      data-aos-duration="2000"
+                    >
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                      <li>{topico.conteudo1}</li>
+                      <li>{topico.conteudo2}</li>
+                      <li>{topico.taxa}</li>
+                    </div>
+                  ))}
+              </>
             ) : (
               <></>
             )}
@@ -1925,6 +2019,24 @@ function servicos() {
             ) : action.autenticacao ? (
               <>
                 {textosDeAutenticacao
+                  .filter((topico) => topico.id === "procedimento")
+                  .map((topico, index) => (
+                    <div
+                      key={index}
+                      data-aos="zoom-in"
+                      data-aos-duration="2000"
+                    >
+                      <h3>{topico.titulo}</h3>
+                      <li>{topico.conteudo}</li>
+                      <li>{topico.conteudo1}</li>
+                      <li>{topico.conteudo2}</li>
+                      <li>{topico.conteudo3}</li>
+                    </div>
+                  ))}
+              </>
+            ) : action.escrituraCompraVenda ? (
+              <>
+                {textosDeEscrituraCompraVenda
                   .filter((topico) => topico.id === "procedimento")
                   .map((topico, index) => (
                     <div

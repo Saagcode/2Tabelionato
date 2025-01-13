@@ -151,13 +151,22 @@ function ServicesHomePage() {
             </li>
             {openMenu.menuEscritura ? (
               <>
-                <li
-                  className="menu-options"
-                  data-aos="fade-down"
-                  data-aos-offset="-1000"
+                <Link
+                  to={{
+                    pathname: "/servicos",
+                    search: "?section=escrituraCompraVenda",
+                  }}
+                  style={{ display: "flex", justifyContent: "right" }}
                 >
-                  <span className="fa-solid fa-file-contract" /> Compra e venda
-                </li>
+                  <li
+                    className="menu-options"
+                    data-aos="fade-down"
+                    data-aos-offset="-1000"
+                  >
+                    <span className="fa-solid fa-file-contract" /> Compra e
+                    venda
+                  </li>
+                </Link>
                 <li
                   className="menu-options"
                   data-aos="fade-down"
