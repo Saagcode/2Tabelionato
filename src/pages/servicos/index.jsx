@@ -19,6 +19,7 @@ import { textosDeProcuracao } from "./procuracao";
 import { textosDeAutenticacao } from "./autenticacaoDeDocumentos";
 import { textoAtosDigitais } from "./atosDigitais";
 import { textosDeEscrituraCompraVenda } from "./escrituras/compraVenda";
+import Mensalista from "./mensalista/index";
 
 function servicos() {
   const [arrow, setArrow] = useState(false);
@@ -446,7 +447,7 @@ function servicos() {
                     {openMenu.menuEscritura ? (
                       <>
                         <Link
-                          to={{ search: "?section=EscrituraCompraVenda" }}
+                          to={{ search: "?section=escrituraCompraVenda" }}
                           style={{ display: "flex", justifyContent: "right" }}
                         >
                           <li
@@ -2058,6 +2059,7 @@ function servicos() {
           </fieldset>
         </div>
       </div>
+      <Mensalista />
       <div className="border-top"></div>
       <div style={{ backgroundColor: "#f9f9f951", height: "80vh" }}>
         <div className="title-container">
