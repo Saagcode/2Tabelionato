@@ -1,6 +1,8 @@
 .container-top-img {
-  background-image: url("../../../public/images/faixada.png");
-  background-position: 70% 50%;
+  background-image: url("../../../public/images/cartorio.jpg");
+  background-repeat: no-repeat;
+  background-position: 60% 5%;
+  background-size: cover;
   height: 40vh;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -17,6 +19,16 @@
   box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.5);
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  animation: opacit 2s ease forwards;
+}
+
+@keyframes opacit {
+  0% {
+    opacity: 10%;
+  }
+  100% {
+    opacity: 80%;
+  }
 }
 
 .body-servicos h3 {
@@ -67,10 +79,15 @@ h3 {
 
 .menu-topics .background-side-pageServices li {
   width: 85%;
+  transition: 0.3s;
+}
+
+.menu-topics .abcd li {
+  background-color: #cecece7b;
 }
 
 .menu-topics li:hover {
-  color: #fff;
+  color: #fff !important;
   transition: 0.3s;
   scale: 1.1;
 }
@@ -116,6 +133,7 @@ h3 {
   height: 60%;
   width: 68%;
   max-height: 320px;
+  text-decoration: underline;
 }
 
 .explanation {
@@ -145,10 +163,12 @@ h3 {
 .container-documentation-procedure .field-2 {
   margin: 30px auto;
   text-align: left;
+  line-height: 2rem;
 }
 
 .container-documentation-procedure .field-1 {
   text-align: left;
+  line-height: 2rem;
 }
 
 .border-top {
@@ -161,4 +181,18 @@ h3 {
   justify-content: center;
   width: 60%;
   margin: 50px auto;
+}
+
+.unclickable {
+  pointer-events: none;
+  animation: opacity 1s ease forwards;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 70%;
+  }
 }

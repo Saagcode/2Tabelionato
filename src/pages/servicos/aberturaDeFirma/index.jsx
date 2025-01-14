@@ -12,6 +12,8 @@ export const textosDeAberturaFirma = [
       comparece pessoalmente e assina uma ficha própria para que sua assinatura 
       seja arquivada.
     `,
+    conteudo1: `O reconhecimento de firma é o ato de validar a assinatura de uma pessoa em um documento, atestando sua autenticidade por meio de um cartório.
+    `,
   },
   {
     id: "para-que-serve",
@@ -31,6 +33,8 @@ export const textosDeAberturaFirma = [
       autenticidade do documento apresentado e procede ao arquivamento da assinatura, 
       tornando-a disponível para futura verificação.
     `,
+    conteudo1: `Reconhecimento por semelhança: O cartório verifica se a assinatura no documento é similar àquela arquivada na abertura de firma.`,
+    conteudo2: `Reconhecimento por autenticidade: O indivíduo comparece pessoalmente ao cartório, assina na frente do tabelião, e ele atesta que a assinatura é verdadeira.`,
   },
   {
     id: "quando-e-necessario",
@@ -41,6 +45,10 @@ export const textosDeAberturaFirma = [
        assinatura.
        Em transações imobiliárias, financeiras e em diversas
        situações que exigem reconhecimento formal de documentos.
+    `,
+    conteudo1: `
+    Quando uma parte precisa garantir que a assinatura no documento é de fato da pessoa que a fez, como em contratos, procurações e escrituras.
+    Em situações em que a assinatura deve ser validada, como em processos judiciais, contratos de compra e venda de imóveis, transações bancárias, etc.
     `,
   },
   {
@@ -53,6 +61,6 @@ export const textosDeAberturaFirma = [
   },
   {
     id: `procedimento`,
-    conteudo: `Necessário comparecer ao cartório para registrar a assinatura.`,
+    conteudo: `Necessário comparecer ao cartório para registrar a assinatura. E posteriormente reconhece-la`,
   },
 ];
