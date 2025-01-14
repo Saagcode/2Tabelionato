@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { textosDeAberturaFirma } from "./aberturaDeFirma/index";
 import { textoApresentacao } from "./apresentacao";
 import { textosDeApostilamento } from "./apostilamento";
+import contract from "../../../public/images/contract.gif"
 
 function servicos() {
   const [arrow, setArrow] = useState(false);
