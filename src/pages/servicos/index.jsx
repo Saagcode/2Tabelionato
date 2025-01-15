@@ -2063,6 +2063,7 @@ function servicos() {
       <div className="diligencia-container">
         <div>
           <button className="button-bills">Solicite um Orçamento</button>
+          <button className="button-bills">Saiba Mais</button>
         </div>
         <div>
           <h3 className="title">DILIGÊNCIA</h3>

@@ -41,7 +41,7 @@ function Footer() {
       </div>
       <footer>
         Todos os direitos reservados © 2º Tabelionato de Notas de São Bento do
-        Sul | Desenvolvido por{" "}
+        Sul / CNPJ: 55.728.220/0001-28 | Desenvolvido por{" "}
         <span
           onClick={() => window.open("https://www.instagram.com/sabino._g/")}
           style={{ cursor: "pointer", marginLeft: "5px" }}
