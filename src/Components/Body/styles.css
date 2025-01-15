@@ -28,7 +28,7 @@
   transition: 0.4s;
   font-size: 3rem;
   right: 0;
-  color: #0073ff89;
+  color: rgba(95, 68, 18, 0.6);
   cursor: pointer;
   animation: appear 1s ease forwards;
 }
@@ -45,7 +45,7 @@
 
 .fa-square-caret-up:hover {
   transition: 0.4s;
-  color: #0073ff;
+  color: rgb(95, 68, 18);
   scale: 1.1;
 }
 

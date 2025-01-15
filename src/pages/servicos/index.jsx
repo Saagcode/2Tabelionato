@@ -19,7 +19,7 @@ import { textosDeProcuracao } from "./procuracao";
 import { textosDeAutenticacao } from "./autenticacaoDeDocumentos";
 import { textoAtosDigitais } from "./atosDigitais";
 import { textosDeEscrituraCompraVenda } from "./escrituras/compraVenda";
-import Mensalista from "./Mensalista";
+import Mensalista from "./mensalista/index";
 
 function servicos() {
   const [arrow, setArrow] = useState(false);
