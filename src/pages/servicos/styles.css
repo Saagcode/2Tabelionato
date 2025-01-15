@@ -40,7 +40,7 @@
   list-style: disc;
   color: #1b2838;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   height: auto;
   margin: 70px 0 0 0;
 }
@@ -77,13 +77,9 @@ h3 {
   margin: 2px auto;
 }
 
-.menu-topics .background-side-pageServices li {
-  width: 85%;
+.menu-topics li {
+  width: 80%;
   transition: 0.3s;
-}
-
-.menu-topics .abcd li {
-  background-color: #cecece7b;
 }
 
 .menu-topics li:hover {
@@ -105,7 +101,7 @@ h3 {
   transition: 0.3s;
   cursor: pointer;
   text-decoration: underline;
-  width: 30%;
+  width: 40%;
   padding: 0px;
   background-color: #1b2838e8;
   border: 1px solid #cecece7b;
@@ -122,26 +118,23 @@ h3 {
   scale: 1.1;
 }
 
-.background-side-pageServices ul {
-  display: flex;
-  flex-direction: column;
-  line-height: 0.3rem;
-  padding: 0px 0px;
+.menu-topics ul {
   margin: 0px auto;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 60%;
-  width: 68%;
-  max-height: 320px;
+  max-height: 430px;
   text-decoration: underline;
 }
 
 .explanation {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: justify;
   margin: 0 0;
+}
+
+.explanation h3 {
+  color: rgb(95, 68, 18);
 }
 
 .explanation ul {
@@ -164,15 +157,22 @@ h3 {
   margin: 0 auto;
 }
 
+legend {
+  color: rgb(95, 68, 18);
+}
+
 .container-documentation-procedure .field-2 {
-  margin: 30px auto;
   text-align: left;
   line-height: 2rem;
+  width: 85%;
+  margin: 0 0;
 }
 
 .container-documentation-procedure .field-1 {
   text-align: left;
   line-height: 2rem;
+  width: 80%;
+  margin: 0 0;
 }
 
 .border-top {
