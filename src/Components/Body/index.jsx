@@ -10,6 +10,16 @@ import ServicesHomePage from "./ServicesHomePage";
 import "../../media-queries/Body/media-queries.css";
 
 function Body() {
+  function handleScrollWindow() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+  useEffect(() => {
+    handleScrollWindow();
+  }, []);
+
   const [arrow, setArrow] = useState(false);
   function handleGoUpArrow() {
     const scrollY = window.scrollY;
@@ -78,7 +88,7 @@ function Body() {
               className="fa-regular fa-square-caret-up"
               onClick={() =>
                 window.scrollTo({
-                  top: 0, 
+                  top: 0,
                   behavior: "smooth",
                 })
               }
