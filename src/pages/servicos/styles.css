@@ -199,3 +199,61 @@ h3 {
     opacity: 70%;
   }
 }
+
+.diligencia-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  color: #1b2838;
+  height: 30vh;
+}
+
+.diligencia-container button {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  align-items: center;
+  margin: 0 0px 0px 40px;
+  font-size: 3rem;
+}
+
+.diligencia-container .title {
+  align-items: center;
+  text-align: right;
+  margin: 0 40px;
+  font-size: 3rem;
+}
+
+.diligencia-container .subtitle {
+  align-items: center;
+  text-align: right;
+  margin: 0 40px;
+  font-size: 1.5rem;
+}
+
+.button-bills {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  color: #ffffffa6;
+  transition: 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  scale: 1;
+  width: 20%;
+  padding: 10px;
+  background-color: #1b2838e8;
+  border: 1px solid #cecece7b;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.button-bills:hover {
+  color: #fff;
+  background-color: #1b2838;
+  transition: 0.3s;
+  scale: 1.1;
+}

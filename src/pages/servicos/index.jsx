@@ -19,7 +19,7 @@ import { textosDeProcuracao } from "./procuracao";
 import { textosDeAutenticacao } from "./autenticacaoDeDocumentos";
 import { textoAtosDigitais } from "./atosDigitais";
 import { textosDeEscrituraCompraVenda } from "./escrituras/compraVenda";
-import Mensalista from "./Mensalista";
+import Mensalista from "./mensalista";
 
 function servicos() {
   const [arrow, setArrow] = useState(false);
@@ -2060,6 +2060,15 @@ function servicos() {
         </div>
       </div>
       <Mensalista />
+      <div className="diligencia-container">
+        <div>
+          <button className="button-bills">Solicite um Orçamento</button>
+        </div>
+        <div>
+          <h3 className="title">DILIGÊNCIA</h3>
+          <h4 className="subtitle">LEVAMOS A SUA DEMANDA ATÉ VOCÊ!</h4>
+        </div>
+      </div>
       <div className="border-top"></div>
       <div style={{ backgroundColor: "#f9f9f951", height: "80vh" }}>
         <div className="title-container">
