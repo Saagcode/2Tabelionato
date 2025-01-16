@@ -8,6 +8,7 @@ import elo from "../../../public/images/elo.png";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import ServicesHomePage from "./ServicesHomePage";
 import "../../media-queries/Body/media-queries.css";
+import Formulariocontato from "../formularioContato";
 
 function Body() {
   function handleScrollWindow() {
@@ -320,70 +321,48 @@ function Body() {
         </section>
       </div>
       {/* Rodape e Fale conosco */}
-      <section className="body-talkus">
-        <div className="title-container">
-          <h2>FALE CONOSCO</h2>
-          <div className="border" style={{ width: "9%" }} />
+      <Formulariocontato />
+      <div className="container-location">
+        <div
+          style={{
+            display: `flex`,
+            justifyContent: `center`,
+            alignItems: `center`,
+            padding: `0 0 10px 0`,
+          }}
+        >
+          <span className="fa-solid fa-map-location-dot" />
+          <h3
+            style={{
+              width: "40%",
+              margin: "0, auto",
+              textAlign: "left",
+              fontSize: "1rem",
+              color: "black",
+              paddingLeft: "40px",
+            }}
+          >
+            Rua Barão do Rio Branco, n.º 197 - sala 28, Zipperer Park (Shopping)
+            2° piso - Centro. CEP 89280-355 / São Bento do Sul - Santa Catarina
+          </h3>
         </div>
-        <div className="container-form-info">
-          <div className="container-form">
-            <h4 style={{ color: "#1b2838e8", fontSize: "1.25rem" }}>
-              PREENCHA O FORMULÁRIO ABAIXO PARA SER ATENDIDO
-            </h4>
-            <form action="">
-              <input type="text" placeholder="Nome*" />
-              <input type="text" placeholder="Email" />
-              <input type="text" placeholder="Telefone*" />
-              <input type="text" placeholder="Assunto*" />
-              <textarea name="" id="" placeholder="Mensagem*" rows="13" />
-              <br />
-            </form>
-            <button>ENVIAR MENSAGEM</button>
-          </div>
-          <div className="container-location">
-            <div
-              style={{
-                display: `flex`,
-                justifyContent: `center`,
-                alignItems: `center`,
-                padding: `0 0 10px 0`,
-              }}
-            >
-              <span className="fa-solid fa-map-location-dot" />
-              <h3
-                style={{
-                  width: "40%",
-                  margin: "0, auto",
-                  textAlign: "left",
-                  fontSize: "1rem",
-                  color: "black",
-                  paddingLeft: "40px",
-                }}
-              >
-                Rua Barão do Rio Branco, n.º 197 - sala 28, Zipperer Park
-                (Shopping) 2° piso - Centro. CEP 89280-355 / São Bento do Sul -
-                Santa Catarina
-              </h3>
-            </div>
-            {isLoaded ? (
-              <GoogleMap
-                mapContainerStyle={{
-                  width: "55%",
-                  height: `100%`,
-                  borderRadius: `10px`,
-                  border: `2px solid #cecece7b`,
-                }}
-                center={position}
-                zoom={15}
-              >
-                <Marker position={position} />
-              </GoogleMap>
-            ) : (
-              <></>
-            )}
-          </div>
-        </div>
-      </section>
+        {isLoaded ? (
+          <GoogleMap
+            mapContainerStyle={{
+              width: "55%",
+              height: `100%`,
+              borderRadius: `10px`,
+              border: `2px solid #cecece7b`,
+            }}
+            center={position}
+            zoom={15}
+          >
+            <Marker position={position} />
+          </GoogleMap>
+        ) : (
+          <></>
+        )}
+      </div>
     </>
   );
 }

@@ -21,6 +21,7 @@ import { textoAtosDigitais } from "./atosDigitais";
 import { textosDeEscrituraCompraVenda } from "./escrituras/compraVenda";
 import Mensalista from "./Mensalista";
 import Citydriver from "../../../public/images/Citydriver.gif";
+import Formulariocontato from "../../Components/formularioContato/";
 
 function servicos() {
   const [arrow, setArrow] = useState(false);
@@ -2084,27 +2085,8 @@ function servicos() {
         </div>
       </div>
       <div className="border-top"></div>
-      <div style={{ backgroundColor: "#f9f9f951", height: "80vh" }}>
-        <div className="title-container">
-          <h2>FALE CONOSCO</h2>
-          <div className="border" style={{ width: "9%" }} />
-        </div>
-        <div className="container-form-info-services">
-          <div className="container-form">
-            <h4 style={{ color: "#1b2838e8", fontSize: "1.25rem" }}>
-              PREENCHA O FORMULÁRIO ABAIXO PARA SER ATENDIDO
-            </h4>
-            <form action="">
-              <input type="text" placeholder="Nome*" />
-              <input type="text" placeholder="Email" />
-              <input type="text" placeholder="Telefone*" />
-              <input type="text" placeholder="Assunto*" />
-              <textarea name="" id="" placeholder="Mensagem*" rows="13" />
-              <br />
-            </form>
-            <button>ENVIAR MENSAGEM</button>
-          </div>
-        </div>
+      <div className="container-form-services">
+        <Formulariocontato />
       </div>
       <Footer />
     </>

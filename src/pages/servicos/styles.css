@@ -208,7 +208,7 @@ legend {
   justify-content: space-around;
   align-items: center;
   color: #1b2838;
-  height: 35vh;
+  height: 45vh;
 }
 
 .diligencia-container button {
@@ -267,9 +267,12 @@ legend {
 }
 
 .container-text {
-  /* background-color: #e7e5e53a;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1); */
   border-bottom: #000000 1px solid;
   border-top-left-radius: 10px;
-  /* border-bottom-left-radius: 10px; */
+}
+
+.container-form-services {
+  height: 100vh;
+  background-color: #1b2838;
+  margin: 80px 0;
 }

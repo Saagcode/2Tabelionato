@@ -362,60 +362,6 @@ h3 {
   margin: 0 auto;
 }
 
-.body-talkus {
-  background-color: #ffffffe7;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-}
-
-.container-form-info {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 100%;
-  margin: 50px auto;
-}
-
-.container-form {
-  margin: 0px 100px;
-}
-
-.container-form textarea {
-  width: 73%;
-  margin: 10px auto;
-  border-radius: 5px;
-  border: 2px solid #cecece7b;
-  background-color: transparent;
-  padding: 15px;
-}
-
-.container-form input {
-  display: inline;
-  justify-content: space-between;
-  flex-direction: row;
-  width: calc(100% / 3);
-  border: 2px solid #cecece7b;
-  border-radius: 5px;
-  background-color: transparent;
-  margin: 10px 12px;
-  padding: 15px;
-}
-
-.container-form button {
-  background-color: #1b2838e8;
-  font-weight: 600;
-  color: #fff;
-  width: 30%;
-
-  padding: 15px;
-  border: none;
-  border-radius: 5px;
-  margin: 0px auto;
-}
-
 .container-location {
   display: flex;
   flex-direction: column;
