@@ -20,6 +20,7 @@ import { textosDeAutenticacao } from "./autenticacaoDeDocumentos";
 import { textoAtosDigitais } from "./atosDigitais";
 import { textosDeEscrituraCompraVenda } from "./escrituras/compraVenda";
 import Mensalista from "./Mensalista";
+import Citydriver from "../../../public/images/Citydriver.gif";
 
 function servicos() {
   const [arrow, setArrow] = useState(false);
@@ -359,14 +360,11 @@ function servicos() {
             {showServices ? (
               <>
                 <div className="background-side-pageServices">
-
                   <li
                     data-aos="fade-down"
                     data-aos-duration="500"
                     data-aos-offset="0"
-                    className={
-                      openMenu.menuCertidoes ? "menu-changed" : "menu"
-                    }
+                    className={openMenu.menuCertidoes ? "menu-changed" : "menu"}
                     onClick={() => handleOpenMenu("menuCertidoes")}
                   >
                     <span className="fa-solid fa-certificate" /> Certidões
@@ -379,12 +377,10 @@ function servicos() {
                           data-aos="fade-down"
                           data-aos-duration="500"
                           data-aos-offset="-1000"
-                          onClick={() =>
-                            handleTypeAction("certidaoEscritura")
-                          }
+                          onClick={() => handleTypeAction("certidaoEscritura")}
                         >
-                          <span className="fa-solid fa-certificate" />{" "}
-                          Certidão de escritura
+                          <span className="fa-solid fa-certificate" /> Certidão
+                          de escritura
                         </li>
                       </Link>
                       <Link to={{ search: "?section=certidaoProcuracao" }}>
@@ -394,8 +390,8 @@ function servicos() {
                           data-aos-duration="500"
                           data-aos-offset="-1000"
                         >
-                          <span className="fa-solid fa-certificate" />{" "}
-                          Certidão de procuração
+                          <span className="fa-solid fa-certificate" /> Certidão
+                          de procuração
                         </li>
                       </Link>
                       <Link
@@ -407,8 +403,8 @@ function servicos() {
                           data-aos-duration="500"
                           data-aos-offset="-1000"
                         >
-                          <span className="fa-solid fa-certificate" />{" "}
-                          Certidão de substabelecimento
+                          <span className="fa-solid fa-certificate" /> Certidão
+                          de substabelecimento
                         </li>
                       </Link>
                       <Link to={{ search: "?section=confirmacaoProcuracao" }}>
@@ -436,9 +432,7 @@ function servicos() {
                     data-aos="fade-down"
                     data-aos-duration="500"
                     data-aos-offset="-100"
-                    className={
-                      openMenu.menuEscritura ? "menu-changed" : "menu"
-                    }
+                    className={openMenu.menuEscritura ? "menu-changed" : "menu"}
                     onClick={() => handleOpenMenu("menuEscritura")}
                   >
                     <span className="fa-solid fa-file-contract" />
@@ -456,8 +450,8 @@ function servicos() {
                           data-aos-duration="500"
                           data-aos-offset="-1000"
                         >
-                          <span className="fa-solid fa-file-contract" />{" "}
-                          Compra e venda
+                          <span className="fa-solid fa-file-contract" /> Compra
+                          e venda
                         </li>
                       </Link>
                       <li
@@ -492,8 +486,8 @@ function servicos() {
                         data-aos-duration="500"
                         data-aos-offset="-1000"
                       >
-                        <span className="fa-solid fa-file-contract" />{" "}
-                        Extinção de Condomínio
+                        <span className="fa-solid fa-file-contract" /> Extinção
+                        de Condomínio
                       </li>
                       <li
                         className="menu-options"
@@ -501,8 +495,8 @@ function servicos() {
                         data-aos-duration="500"
                         data-aos-offset="-1000"
                       >
-                        <span className="fa-solid fa-file-contract" />{" "}
-                        Servidão de passagem
+                        <span className="fa-solid fa-file-contract" /> Servidão
+                        de passagem
                       </li>
                       <li
                         className="menu-options"
@@ -599,9 +593,7 @@ function servicos() {
                     style={{ display: "flex", justifyContent: "right" }}
                   >
                     <li
-                      className={
-                        openMenu.menuDigital ? "menu-changed" : "menu"
-                      }
+                      className={openMenu.menuDigital ? "menu-changed" : "menu"}
                       onClick={() => handleOpenMenu("menuDigital")}
                     >
                       <span className="fa-solid fa-lock" />
@@ -668,8 +660,7 @@ function servicos() {
                           data-aos-duration="500"
                           data-aos-offset="-1000"
                         >
-                          <span className="fa-solid fa-lock" /> Atos
-                          Eletrônicos
+                          <span className="fa-solid fa-lock" /> Atos Eletrônicos
                         </li>
                       </Link>
                       <div
@@ -1550,12 +1541,16 @@ function servicos() {
                           display: "flex",
                           justifyContent: "center",
                           margin: "0 auto",
-                          textAlign: "center",
-                          width: "100%",
-                          fontSize: "1.5rem",
+                          textAlign: "justify",
+                          width: "80%",
+                          fontSize: "1.3rem",
                         }}
                       >
-                        <h4 data-aos="fade-right" data-aos-duration="2000">
+                        <h4
+                          data-aos="fade-right"
+                          data-aos-duration="2000"
+                          style={{ margin: "0 0" }}
+                        >
                           {topico.conteudo}
                         </h4>
                       </div>
@@ -2066,9 +2061,26 @@ function servicos() {
           <button className="button-bills">Solicite um Orçamento</button>
           <button className="button-bills">Saiba Mais</button>
         </div>
-        <div>
-          <h3 className="title">DILIGÊNCIA</h3>
-          <h4 className="subtitle">LEVAMOS A SUA DEMANDA ATÉ VOCÊ!</h4>
+        <div className="container-car-text">
+          <div
+            style={{ display: "flex", justifyContent: "right", zIndex: "-1" }}
+            data-aos="fade-left"
+            data-aos-duration="2000"
+          >
+            <img src={Citydriver} alt="carro" />
+          </div>
+          <div
+            className="container-text"
+            data-aos="fade-left"
+            data-aos-duration="2000"
+          >
+            <h3 className="title" data-aos="fade-left">
+              DILIGÊNCIA
+            </h3>
+            <h4 className="subtitle" data-aos="fade-left">
+              LEVAMOS A SUA DEMANDA ATÉ VOCÊ!
+            </h4>
+          </div>
         </div>
       </div>
       <div className="border-top"></div>

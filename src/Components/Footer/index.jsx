@@ -1,4 +1,5 @@
 import "./styles.css";
+import Logotabelionato from "../../../public/images/LogotabelionatoFooter.png";
 
 function Footer() {
   return (
@@ -40,6 +41,11 @@ function Footer() {
         </span>
       </div>
       <footer>
+        <img
+          src={Logotabelionato}
+          alt="logotipo"
+          style={{ margin: "0 30px 0 0" }}
+        />
         Todos os direitos reservados © 2º Tabelionato de Notas de São Bento do
         Sul / CNPJ: 55.728.220/0001-28 | Desenvolvido por{" "}
         <span
