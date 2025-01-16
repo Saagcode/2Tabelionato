@@ -1,18 +1,49 @@
 .body-talkus {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.body-talkus h1,
+h2 {
+  font-size: 1rem;
+}
+
+.title-container {
+  color: #fff;
+  padding: 0;
 }
 
 .container-form-info {
   background-color: #cecece7b;
-  width: 30%;
-  margin: auto;
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid rgba(225, 225, 225, 0.5);
+  border-top: none;
+}
+
+.container-content-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  height: 70vh;
+}
+
+.fa-circle-right {
+  font-size: 3rem;
+}
+
+.container-arrow-textForm {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .container-form {
-  margin: 0px 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0px auto;
+  padding: 50px;
 }
 
 .container-form textarea {
@@ -29,9 +60,10 @@
   background-color: #cecece7b;
   border: none;
   border-radius: 5px;
-  margin: 10px 0px;
+  margin: 0px 0px;
   padding: 15px;
   width: 100%;
+  font-size: 0.8rem;
 }
 
 .container-button-send {
@@ -52,14 +84,19 @@
 .content-phone-assunto {
   display: flex;
   flex-direction: row;
-  gap: 60px;
+  justify-content: space-between;
   width: 100%;
+}
+
+.content-name-email {
+  display: flex;
+  flex-direction: column;
 }
 
 .content-city-state {
   display: flex;
   flex-direction: row;
-  gap: 60px;
+  justify-content: space-between;
   width: 100%;
 }
 
