@@ -133,7 +133,7 @@ function Body() {
       </div>
       <div className="bodyAboutUs">
         <div className="title-container">
-          <h2>O 2° TABELIONATO DE NOTAS</h2>
+          <h2 style={{color:'#1b2838', fontSize:'3rem'}}>O 2° TABELIONATO DE NOTAS</h2>
         </div>
         <div className="border"></div>
         <h3>

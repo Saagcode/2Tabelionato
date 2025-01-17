@@ -2064,7 +2064,7 @@ function servicos() {
         </div>
         <div className="container-car-text">
           <div
-            style={{ display: "flex", justifyContent: "right", zIndex: "-1" }}
+            style={{ display: "flex", justifyContent: "right", position: 'relative', zIndex: "-1" }}
             data-aos="fade-left"
             data-aos-duration="2000"
           >

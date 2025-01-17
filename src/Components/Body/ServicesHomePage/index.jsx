@@ -24,7 +24,7 @@ function ServicesHomePage() {
         <div>
           <fieldset>
             <legend>
-              <h3>Setor Administrativo</h3>
+              <h3 style={{ color: '#1b2838' }}>Setor Administrativo</h3>
             </legend>
             <h4>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -37,7 +37,7 @@ function ServicesHomePage() {
         <div>
           <fieldset onClick={() => handleButton("escritura")}>
             <legend>
-              <h3>Setor Escrituras</h3>
+              <h3 style={{ color: '#1b2838' }}>Setor Escrituras</h3>
             </legend>
             <h4>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -50,7 +50,7 @@ function ServicesHomePage() {
         <div>
           <fieldset onClick={() => handleButton("executivo")}>
             <legend>
-              <h3>Setor Executivo</h3>
+              <h3 style={{ color: '#1b2838' }}>Setor Executivo</h3>
             </legend>
             <h4>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -61,7 +61,7 @@ function ServicesHomePage() {
           </fieldset>
         </div>
       </section>
-      <h2 style={{ color: "#1b2838e8" }}>Nossos Serviços</h2>
+      <h2 style={{ color: '#1b2838', fontSize: '3rem' }}>Nossos Serviços</h2>
       <div className="border-ServicesList"></div>
       <section className="container_ServicesList">
         <div className="background-side">

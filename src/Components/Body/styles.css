@@ -372,6 +372,22 @@ h3 {
   margin: 0px auto;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(136deg,
+      #ffffff 0%,
+      #f0f0f0 40%,
+      #f0f0f0 58%,
+      #ffffff 58%,
+      #ffffff 60%,
+      #f0f0f0 60%,
+      #f0f0f0 62%,
+      #dcdcdc 62%,
+      #dcdcdc 64%,
+      #f0f0f0 64%,
+      #f0f0f0 66%,
+      #d3d3d3 66%,
+      #d3d3d3 68%,
+      #f0f0f0 68%,
+      #f0f0f0 100%);
 }
 
 .fa-map-location-dot {
