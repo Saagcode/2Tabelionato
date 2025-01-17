@@ -334,25 +334,28 @@ function Body() {
           <span className="fa-solid fa-map-location-dot" />
           <h3
             style={{
-              width: "40%",
+              width: "100%",
               margin: "0, auto",
               textAlign: "left",
               fontSize: "1rem",
               color: "black",
               paddingLeft: "40px",
+              fontSize: "2rem",
             }}
           >
             Rua Barão do Rio Branco, n.º 197 - sala 28, Zipperer Park (Shopping)
-            2° piso - Centro. CEP 89280-355 / São Bento do Sul - Santa Catarina
+            2° piso - Centro.
           </h3>
         </div>
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={{
-              width: "55%",
-              height: `100%`,
+              width: "100%",
+              height: `50vh`,
+              margin: "0 0 80px 0",
               borderRadius: `10px`,
               border: `2px solid #cecece7b`,
+              boxShadow: `0px 5px 15px 1px rgba(0, 0, 0, 0.5)`,
             }}
             center={position}
             zoom={15}
