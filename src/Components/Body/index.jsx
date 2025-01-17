@@ -95,17 +95,26 @@ function Body() {
               }
             />
           )}
-          <h3 data-aos="fade-up" data-aos-duration="2000">
+          <h3
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            style={{ fontSize: "3rem" }}
+          >
             SEJA BEM VINDO AO
           </h3>
           <h2
             data-aos="fade-zoom-in"
             data-aos-duration="1500"
             data-aos-easing="ease-in-back"
+            style={{ fontSize: "5rem" }}
           >
             2° TABELIONATO DE NOTAS
           </h2>
-          <h1 data-aos="fade-up" data-aos-duration="2000">
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            style={{ fontSize: "3rem" }}
+          >
             DE SÃO BENTO DO SUL
           </h1>
           <div className="container_button">
@@ -121,7 +130,7 @@ function Body() {
               className="fa-regular fa-clock"
               style={{ fontSize: "2.5rem", padding: " 0 10px" }}
             />
-            <h4 style={{ fontSize: "1.2rem" }}>Horários de funcionamento</h4>
+            <h4 style={{ fontSize: "1.5rem" }}>Horários de funcionamento</h4>
             <div
               className="border_1"
               style={{ width: "25%", backgroundColor: "white" }}
@@ -133,7 +142,9 @@ function Body() {
       </div>
       <div className="bodyAboutUs">
         <div className="title-container">
-          <h2 style={{color:'#1b2838', fontSize:'3rem'}}>O 2° TABELIONATO DE NOTAS</h2>
+          <h2 style={{ color: "#1b2838", fontSize: "3rem" }}>
+            O 2° TABELIONATO DE NOTAS
+          </h2>
         </div>
         <div className="border"></div>
         <h3>

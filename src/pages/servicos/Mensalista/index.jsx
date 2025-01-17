@@ -25,20 +25,11 @@ function Mensalista() {
       <section className="section-mensalist-content">
         <div>
           <span className="fa-regular fa-circle-check" />
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum qui
-            sunt
-          </h3>
+          <h3>ATENDIMENTO PERSONALIZADO</h3>
           <span className="fa-regular fa-circle-check" />
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum qui
-            sunt
-          </h3>
+          <h3>EXTRATO MENSAL DOS SERVIÇOS REALIZADOS;</h3>
           <span className="fa-regular fa-circle-check" />
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum qui
-            sunt
-          </h3>
+          <h3>ATÉ 30 DIAS PARA PAGAMENTO.</h3>
         </div>
         <div>
           <img src={contract} alt="deal-business" />
