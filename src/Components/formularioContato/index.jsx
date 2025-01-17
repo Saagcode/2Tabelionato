@@ -8,26 +8,24 @@ function Formulariocontato() {
     <>
       <section className="body-talkus">
         <div className="title-container">
-          <div className="teste">
-            <div className="container-content-text">
-              <h3 style={{ fontSize: "2.5rem" }}>
-                Precisando de agilidade nos seus atos notariais?
-              </h3>
-              <h2 style={{ fontSize: "1.5rem" }}>
-                Saiba na prática como podemos agilizar suas demandas e finalizar
-                os processos em prazos surpreendentes.
-              </h2>
-              <h2 style={{ fontSize: "1.5rem" }}>
-                Entre em contato com nossos profissionais e inicie o seu
-                processo ainda hoje.
-              </h2>
-            </div>
-            <div className="container-arrow-textForm">
-              <span className="fa-regular fa-circle-right" />
-              <h4 style={{ color: "#fff", fontSize: "1.5rem", width: "100%" }}>
-                PREENCHA O FORMULÁRIO PARA SER ATENDIDO
-              </h4>
-            </div>
+          <div className="container-content-text">
+            <h3 style={{ fontSize: "2.5rem" }}>
+              Precisando de agilidade nos seus atos notariais?
+            </h3>
+            <h2 style={{ fontSize: "1.5rem" }}>
+              Saiba na prática como podemos agilizar suas demandas e finalizar
+              os processos em prazos surpreendentes.
+            </h2>
+            <h2 style={{ fontSize: "1.5rem" }}>
+              Entre em contato com nossos profissionais e inicie o seu processo
+              ainda hoje.
+            </h2>
+          </div>
+          <div className="container-arrow-textForm">
+            <span className="fa-regular fa-circle-right" />
+            <h4 style={{ color: "#fff", fontSize: "1.5rem", width: "100%" }}>
+              PREENCHA O FORMULÁRIO PARA SER ATENDIDO
+            </h4>
           </div>
         </div>
         <form action="">

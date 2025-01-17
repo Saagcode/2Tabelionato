@@ -321,7 +321,9 @@ function Body() {
         </section>
       </div>
       {/* Rodape e Fale conosco */}
-      <Formulariocontato />
+      <div className="container-form-services">
+        <Formulariocontato />
+      </div>
       <div className="container-location">
         <div
           style={{
@@ -353,7 +355,6 @@ function Body() {
               width: "100%",
               height: `50vh`,
               margin: "0 0 80px 0",
-              borderRadius: `10px`,
               border: `2px solid #cecece7b`,
               boxShadow: `0px 5px 15px 1px rgba(0, 0, 0, 0.5)`,
             }}
