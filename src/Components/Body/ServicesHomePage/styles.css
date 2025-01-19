@@ -122,7 +122,6 @@ div button {
   border-radius: 10px;
   list-style-type: none;
   font-size: 0.9rem;
-  cursor: pointer;
 }
 
 .menu-options {
@@ -144,7 +143,6 @@ div button {
   list-style-type: none;
   font-size: 0.9rem;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .menu-options:hover {

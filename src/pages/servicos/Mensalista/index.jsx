@@ -23,7 +23,11 @@ function Mensalista() {
         </div>
       </div>
       <section className="section-mensalist-content">
-        <div>
+        <div
+          className="container-copy-mensalist"
+          data-aos="fade-down"
+          data-aos-duration="1100"
+        >
           <span className="fa-regular fa-circle-check" />
           <h3>ATENDIMENTO PERSONALIZADO</h3>
           <span className="fa-regular fa-circle-check" />
@@ -31,7 +35,7 @@ function Mensalista() {
           <span className="fa-regular fa-circle-check" />
           <h3>ATÉ 30 DIAS PARA PAGAMENTO.</h3>
         </div>
-        <div>
+        <div style={{ margin: "0 auto" }}>
           <img src={contract} alt="deal-business" />
         </div>
       </section>
