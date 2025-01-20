@@ -37,7 +37,7 @@ function servicos() {
   useEffect(() => {
     window.addEventListener("scroll", handleGoUpArrow);
 
-    // Remove o evento de scroll ao desmontar o componente
+    
     return () => {
       window.removeEventListener("scroll", handleGoUpArrow);
     };

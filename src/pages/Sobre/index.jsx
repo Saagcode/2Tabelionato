@@ -3,54 +3,103 @@ import Head from "../../Components/Head";
 import './styles.css'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import teste from "../../../public/images/logo.png"
+import { useState, useEffect } from "react";
+
 function Sobre() {
+    const [arrow, setArrow] = useState(false);
+    function handleGoUpArrow() {
+        const scrollY = window.scrollY;
+        if (scrollY > 100) {
+            setArrow(true);
+        } else {
+            setArrow(false);
+        }
+    }
+    useEffect(() => {
+        window.addEventListener("scroll", handleGoUpArrow);
+
+
+        return () => {
+            window.removeEventListener("scroll", handleGoUpArrow);
+        };
+    }, []);
+    function handleScrollWindow() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+    useEffect(() => {
+        handleScrollWindow();
+    }, []);
     return (
         <>
             <Head />
+            {arrow && (
+                <span
+                    className="fa-regular fa-square-caret-up"
+                    onClick={() =>
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        })
+                    }
+                />
+            )}
+            <div className="container-top-img-about">
+                <div className="body-servicos">
+                    <div>
+                        <h3>
+                            SOBRE NÓS
+                        </h3>
+                    </div>
+                </div>
+            </div>
             <section className="container-Timeline">
-                <h1>O 2º TABELIONATO DE NOTAS</h1>
+                <h1>O 2º TABELIONATO DE NOTAS DE SÃO BENTO DO SUL</h1>
                 <VerticalTimeline lineColor={'#cecece7b'}>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#1b2838', color: '#fff' }}
                         contentArrowStyle={{ borderRight: '7px solid  #1b2838' }}
-                        date="2011 - present"
+                        date="19/08/2024"
                         iconStyle={{ background: '#1b2838', color: '#fff' }}
                         dateClassName="text-date"
                     >
-                        <h3 className="vertical-timeline-element-title">Creative Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+                        <h3 className="vertical-timeline-element-title">História</h3>
+                        <h4 className="vertical-timeline-element-subtitle">O 2° Tabelionato de São Bento do Sul foi instaurado pela Tabeliã Karine Stier Vieira no ano de 2024</h4>
                         <p>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                            IMAGEM AQUI
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        date="2010 - 2011"
+                        date="2024 - Atualmente"
                         contentStyle={{ background: '#1b2838', color: '#fff' }}
                         contentArrowStyle={{ borderRight: '7px solid  #1b2838' }}
                         iconStyle={{ background: '#1b2838', color: '#fff' }}
                         dateClassName="text-date"
                     >
-                        <h3 className="vertical-timeline-element-title">Art Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+                        <h3 className="vertical-timeline-element-title">Local</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Estamos no ZippererPark, 2° piso, sala 28</h4>
+                        <h4 className="vertical-timeline-element-subtitle">Centro de São Bento do Sul</h4>
                         <p>
-                            Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+                            IMAGEM AQUI
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        date="2008 - 2010"
+                        date="2025"
                         contentStyle={{ background: '#1b2838', color: '#fff' }}
                         contentArrowStyle={{ borderRight: '7px solid  #1b2838' }}
                         iconStyle={{ background: '#1b2838', color: '#fff' }}
                         dateClassName="text-date"
                     >
-                        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
+                        <h3 className="vertical-timeline-element-title">Nossa Equipe</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Profissionais capacitados</h4>
+                        <h4 className="vertical-timeline-element-subtitle">Carisma e Excelência para suprir da melhor forma qualquer demanda</h4>
                         <p>
-                            User Experience, Visual Design
+                            IMAGEM AQUI
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
@@ -90,25 +139,29 @@ function Sobre() {
                         iconStyle={{ background: 'rgb(112, 76, 10)', color: '#fff' }}
 
                     >
-                        <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
+                        <h3 className="vertical-timeline-element-title">Nossa Estrutura</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Estacionamento privativo</h4>
+                        <h4 className="vertical-timeline-element-subtitle">Localizado na região central da cidade</h4>
+                        <h4 className="vertical-timeline-element-subtitle">Localizado na região central da cidade</h4>
                         <p>
-                            Creative Direction, User Experience, Visual Design
+                            IMAGEM AQUI
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        date="2002 - 2006"
+                        date="1983 - 2025"
                         dateClassName="text-date"
                         contentStyle={{ background: 'rgb(112, 76, 10)', color: '#fff' }}
                         contentArrowStyle={{ borderRight: '7px solid  rgb(112, 76, 10)' }}
                         iconStyle={{ background: 'rgb(112, 76, 10)', color: '#fff' }}
 
                     >
-                        <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+                        <h3 className="vertical-timeline-element-title">A Tabeliã</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Karine Stier Vieira, natural de Joinville/SC</h4>
+                        <h4 className="vertical-timeline-element-subtitle">Experiencia profissional aqui</h4>
+                        <h4 className="vertical-timeline-element-subtitle">Experiencia profissional aqui</h4>
                         <p>
-                            Creative Direction, Visual Design
+                            IMAGEM AQUI
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
