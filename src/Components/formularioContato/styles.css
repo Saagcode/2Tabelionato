@@ -72,6 +72,7 @@ h2 {
 
 .container-form input {
   background-color: #cecece7b;
+  color: #000;
   border: none;
   border-radius: 5px;
   margin: 0px 0px;
@@ -90,7 +91,7 @@ h2 {
   background-color: #1b2838e8;
   font-weight: 600;
   color: #fff;
-  width: 70%;
+  width: 100%;
   padding: 15px;
   border: none;
   border-radius: 5px;

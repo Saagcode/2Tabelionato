@@ -6,7 +6,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 function Formulariocontato() {
   const [change, setChange] = useState(false);
-  const [serviceType, setServiceType] = useState("");
+  const [changeSend, setChangeSend] = useState(false);
+  const [serviceType, setServiceType] = useState("selecionar");
+  const [formValues, setFormValues] = useState({
+    nome: "",
+    telefone: "",
+    assunto: "",
+    cidade: "",
+    estado: "",
+    observacoes: "",
+  });
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -16,9 +25,20 @@ function Formulariocontato() {
 
   // Atualiza o estado do formulário com base no valor de 'section'
 
+  useEffect(() => {
+    const isFormValid =
+      Object.values(formValues).every((value) => value.trim() !== "") &&
+      serviceType !== "selecionar";
+    setChangeSend(isFormValid);
+  }, [formValues, serviceType]);
+
+  function handleWriteSomething(e) {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  }
   function handleSelectService(e) {
     const selectedValue = e.target.value;
-    if (selectedValue === "") {
+    if (selectedValue === "" || selectedValue === "selecionar") {
       setChange(false);
     } else {
       setChange(true);
@@ -27,7 +47,9 @@ function Formulariocontato() {
   }
 
   function placeHolder() {
-    if (serviceType === "") {
+    if (serviceType === "selecionar") {
+      return "Mensagem*";
+    } else if (serviceType === "") {
       return "DIGITE O TIPO DE SERVIÇO DESEJADO AQUI*";
     }
     return `Mensagem*`;
@@ -53,10 +75,16 @@ function Formulariocontato() {
       setChange(selectedValue === "certidaoEscritura");
     } else if (change === "apostilamento") {
       setChange(selectedValue === "apostilamento");
+    } else if (change === "selecionar") {
+      setChange(selectedValue === "");
     }
-    // Atualiza a URL com o parâmetro 'section'
-    const newUrl = `?section=${selectedValue}`;
-    navigate(`${location.pathname}${newUrl}`, { replace: true });
+
+    const currentPath =
+      location.pathname === "/"
+        ? "/servicos"
+        : location.pathname.replace(/\/$/, "");
+    const newUrl = `${currentPath}?section=${selectedValue}`;
+    navigate(newUrl, { replace: true });
   }
   Aos.init();
   return (
@@ -92,7 +120,13 @@ function Formulariocontato() {
             <div className="content-name-email">
               <div>
                 <h1 style={{ textAlign: "left" }}>Nome</h1>
-                <input type="text" placeholder="Nome*" />
+                <input
+                  type="text"
+                  placeholder="Nome*"
+                  value={formValues.nome}
+                  name="nome"
+                  onChange={handleWriteSomething}
+                />
               </div>
               <div>
                 <h1 style={{ textAlign: "left" }}>E-mail</h1>
@@ -108,7 +142,13 @@ function Formulariocontato() {
                 }}
               >
                 <h1 style={{ textAlign: "left" }}>Telefone</h1>
-                <input type="text" placeholder="Telefone*" />
+                <input
+                  type="text"
+                  name="telefone"
+                  placeholder="Telefone*"
+                  value={formValues.telefone}
+                  onChange={handleWriteSomething}
+                />
               </div>
               <div
                 style={{
@@ -118,7 +158,13 @@ function Formulariocontato() {
                 }}
               >
                 <h1 style={{ textAlign: "left" }}>Assunto</h1>
-                <input type="text" placeholder="Assunto*" />
+                <input
+                  type="text"
+                  name="assunto"
+                  placeholder="Assunto*"
+                  value={formValues.assunto}
+                  onChange={handleWriteSomething}
+                />
               </div>
             </div>
             <div className="content-city-state">
@@ -130,7 +176,13 @@ function Formulariocontato() {
                 }}
               >
                 <h1 style={{ textAlign: "left" }}>Cidade</h1>
-                <input type="text" placeholder="Cidade*" />
+                <input
+                  type="text"
+                  value={formValues.cidade}
+                  placeholder="Cidade*"
+                  name="cidade"
+                  onChange={handleWriteSomething}
+                />
               </div>
               <div
                 style={{
@@ -140,7 +192,13 @@ function Formulariocontato() {
                 }}
               >
                 <h1 style={{ textAlign: "left" }}>Estado</h1>
-                <input type="text" placeholder="Estado*" />
+                <input
+                  type="text"
+                  placeholder="Estado*"
+                  name="estado"
+                  value={formValues.estado}
+                  onChange={handleWriteSomething}
+                />
               </div>
             </div>
             <div
@@ -151,20 +209,27 @@ function Formulariocontato() {
               }}
             >
               <h1 style={{ textAlign: "left", color: "#000" }}>Observações</h1>
-              <textarea name="" id="" placeholder={placeHolder()} rows="10" />
+              <textarea
+                name="observacoes"
+                id=""
+                placeholder={placeHolder()}
+                rows="10"
+                value={formValues.observacoes}
+                onChange={handleWriteSomething}
+              />
             </div>
             <h1 style={{ textAlign: "left", color: "#000" }}>
               Tipo de Servico
             </h1>
             <select name="" id="tipo" onChange={handleSelectService}>
-              <option value="">Selecione*</option>
+              <option value="selecionar">Selecione*</option>
               <option value="escrituraCompraVenda">Escritura de imovel</option>
               <option value="inventarioPartilha">Inventario</option>
               <option value="ataNotarial">Ata Notarial</option>
               <option value="divorcioExtrajudicial">Divorcio</option>
               <option value="certidaoEscritura">Certidoes</option>
               <option value="apostilamento">Apostilamento</option>
-              <option value="">Outras Escrituras</option>
+              <option value="">Outros Serviços</option>
             </select>
             <div className="container-btn-functions">
               <button>ESCOLHER ARQUIVOS</button>
@@ -176,7 +241,9 @@ function Formulariocontato() {
               </button>
             </div>
             <div className="container-button-send">
-              <button>ENVIAR MENSAGEM</button>
+              <button className={changeSend ? "unblock-btn" : "block-btn"}>
+                ENVIAR MENSAGEM
+              </button>
             </div>
           </div>
         </form>
