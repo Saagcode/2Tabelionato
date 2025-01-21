@@ -1,47 +1,69 @@
 .container-top-img-about {
-    background-image: url("../../../public/images/meeting.jpg");
-    background-repeat: no-repeat;
-    background-position: 0% 59%;
-    background-size: cover;
-    height: 40vh;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+  background-image: url("../../../public/images/meeting.jpg");
+  background-repeat: no-repeat;
+  background-position: 0% 59%;
+  background-size: cover;
+  height: 40vh;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .container-Timeline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0px 0;
-    background: linear-gradient(228deg,
-            #ffffff 56%,
-            #ffffff 56%,
-            #f5f5f578 56%,
-            #f5f5f578 58%,
-            #ffffff 58%,
-            #ffffff 60%,
-            #f5f5f5b8 60%,
-            #f5f5f5 62%,
-            #fbfbfb 62%,
-            #fbfbfb 64%,
-            #f5f5f5 64%,
-            #f5f5f5b8 66%,
-            #fbfbfb 66%,
-            #fbfbfb 68%,
-            #fbfbfb 68%,
-            #fbfbfb 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0px 0;
+  background: linear-gradient(
+    295deg,
+    #ffffff 56%,
+    #ffffff 56%,
+    #f5f5f578 56%,
+    #f5f5f578 58%,
+    #ffffff 58%,
+    #ffffff 60%,
+    #f5f5f5b8 60%,
+    #f5f5f5 62%,
+    #fbfbfb 62%,
+    #fbfbfb 64%,
+    #f5f5f5 64%,
+    #f5f5f5b8 66%,
+    #fbfbfb 66%,
+    #fbfbfb 68%,
+    #fbfbfb 68%,
+    #fbfbfb 100%
+  );
+  background-position: center;
 }
 
 .container-Timeline h1 {
-    color: #1b2838;
-    padding: 25px;
-    width: 100%;
-    margin: 50px 0 0 0;
-    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.2);
-    background-color: transparent;
+  color: #1b2838;
+  padding: 25px;
+  width: 100%;
+  margin: 50px 0 0 0;
+  box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.2);
+  background-color: #f8f8f8;
+}
+
+.container-txt {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px auto;
+}
+
+.vertical-timeline-element-subtitle {
+  width: 65%;
+  padding: 5px;
 }
 
 .text-date {
-    color: #000;
+  color: #000;
+}
+
+.img-styles {
+  border-radius: 20%;
+  margin: 10px 0;
+  border: 1px solid #fff;
 }
