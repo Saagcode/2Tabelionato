@@ -14,8 +14,11 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { useState, useEffect } from "react";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 function Sobre() {
+  Aos.init();
   const [arrow, setArrow] = useState(false);
   function handleGoUpArrow() {
     const scrollY = window.scrollY;
@@ -63,30 +66,27 @@ function Sobre() {
         </div>
       </div>
       <section className="container-Timeline">
-        <h3 style={{ color: "#000", width: "50%" }}>
-          Com 335 anos de história, o 1º Tabelionato de Notas possui uma equipe
-          de profissionais altamente qualificada para a realização de atos
-          notariais, uma estrutura inovadora e localização privilegiada no
-          Centro político-administrativo de Curitiba. Faça-nos uma visita e
-          conheça um novo conceito de Cartório!
-        </h3>
-        <h3 style={{ color: "#000", width: "50%" }}>
-          Notas tem como titular Fernanda Granja Cavalcante da Costa, Tabeliã
-          que entrou em exercício em decorrência de aprovação no Concurso
-          Público para Outorga de Delegações de Nota e de Registro do Estado do
-          Paraná (Edital n.01/2014).
-        </h3>
-        <h3 style={{ color: "#000", width: "50%" }}>
-          Fernanda Granja Cavalcante da Costa é Atualmente, o 1º Tabelionato de
-          graduada em direito pela Universidade Federal do Amazonas,
-          pós-graduada em Direito Constitucional e em Ciências Criminais. Antes
-          de assumir essa função, a Tabeliã já atuou como agente administrativa
-          no Ministério Público do Estado Amazonas, Delegada de Polícia do
-          Estado do Amazonas e Professora Universitária em vários cursos de
-          graduação da Universidade Federal do Amazonas. Atualmente, a Tabeliã é
-          aluna do programa de Mestrado em Direito na Universidade de Marília –
-          UNIMAR.
-        </h3>
+        <div
+          className="container-copy-text"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <h3 style={{ color: "#fff", width: "90%", margin: "50px" }}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi aut
+            quas ratione amet dolore ipsam rerum atque, consequuntur numquam id
+            veritatis ab officia debitis facere earum, nam sit vero maiores!
+          </h3>
+          <h3 style={{ color: "#fff", width: "90%", margin: "50px" }}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi aut
+            quas ratione amet dolore ipsam rerum atque, consequuntur numquam id
+            veritatis ab officia debitis facere earum, nam sit vero maiores!
+          </h3>
+          <h3 style={{ color: "#fff", width: "90%", margin: "50px" }}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi aut
+            quas ratione amet dolore ipsam rerum atque, consequuntur numquam id
+            veritatis ab officia debitis facere earum, nam sit vero maiores!
+          </h3>
+        </div>
         <h1>O 2º TABELIONATO DE NOTAS DE SÃO BENTO DO SUL</h1>
         <VerticalTimeline lineColor={"#cecece7b"}>
           <VerticalTimelineElement

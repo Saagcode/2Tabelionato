@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0px 0;
+  margin: 0px auto;
   background: linear-gradient(
     295deg,
     #ffffff 56%,
@@ -36,13 +36,26 @@
   background-position: center;
 }
 
+.container-copy-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1b2838;
+  margin: 40px 0 0 0;
+  width: 40%;
+  border-radius: 20px 20px 0 0;
+  align-items: center;
+}
+
 .container-Timeline h1 {
   color: #1b2838;
   padding: 25px;
   width: 100%;
-  margin: 50px 0 0 0;
+  margin: 0px 0 0 0;
   box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.2);
   background-color: #f8f8f8;
+  position: relative;
+  z-index: 100;
 }
 
 .container-txt {
